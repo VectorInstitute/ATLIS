@@ -1,1 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Position: From Models to Systems — ATLIS</title>
+  <meta name="description" content="ICML position paper page: Agentic Trajectory and Layered Interpretability Stack (ATLIS)" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="kicker">ICML Position Paper</p>
+      <h1 class="title">
+        Position: As we move from models to systems, we need and should use the
+        Agentic Trajectory and Layered Interpretability Stack (ATLIS)
+      </h1>
+
+      <p class="authors">
+        Judy Zhu · Dhari Gandhi · Ahmad Rezaie Mianroodi · Dhanesh Ramachandran · Shaina Raza · Sedef Akinli Kocak
+      </p>
+
+      <div class="links">
+        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Paper (coming soon)</a>
+        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">arXiv (coming soon)</a>
+        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Code (coming soon)</a>
+        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Slides (coming soon)</a>
+      </div>
+
+      <p class="note">
+        Links will be enabled once the PDF/arXiv/code are available.
+      </p>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Section navigation">
+    <div class="container toc-inner">
+      <a href="#abstract">Abstract</a>
+      <a href="#introduction">Introduction</a>
+      <a href="#position">Position</a>
+      <a href="#counterarguments">Counterarguments</a>
+      <a href="#framework">Conceptual Framework</a>
+      <a href="#mapping">Mapping</a>
+      <a href="#limitations">Limitations</a>
+      <a href="#case-study">Illustrative Case Study</a>
+      <a href="#discussion">Discussion</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="abstract" class="section">
+      <h2>Abstract</h2>
+      <p class="muted">
+        (Add your abstract here.)
+      </p>
+    </section>
+
+    <section id="introduction" class="section">
+      <h2>Introduction</h2>
+      <p class="muted">
+        (Add the introduction here.)
+      </p>
+    </section>
+
+    <section id="position" class="section">
+      <h2>Position</h2>
+      <p class="muted">
+        The interpretability field is solving the wrong problem for the agentic era. Current methods explain how individual models compute outputs but cannot explain why an agent selected a particular plan, how coordination failed, or where accountability lies. We argue three points: (1) interpretability methods must co-evolve with agentic capabilities rather than follow them, embedding transparency into planning, tool use, and memory from the outset; (2) agentic opacity occurs at distinct layers—behavioral, mechanistic, coordination, and safety, each requiring tailored methods; and (3) interpretability must integrate across the full agent development lifecycle rather than serve as a one-time audit.
+      </p>
+
+      <div class="callout">
+        <h3>Core Claims (placeholders)</h3>
+        <ol>
+          <li><strong>Coevolution over reaction.</strong> …</li>
+          <li><strong>Layered decomposition.</strong> …</li>
+          <li><strong>Lifecycle integration.</strong> …</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="counterarguments" class="section">
+      <h2>Alternate Positions and Counterarguments</h2>
+      <p class="muted">
+        (Add Counterposition 1–N blocks here)
+      </p>
+    </section>
+
+    <section id="framework" class="section">
+      <h2>Conceptual Framework</h2>
+      <p class="muted">
+        (Briefly introduce ATLIS and the lifecycle + layered stack figure)
+      </p>
+
+      <figure class="figure">
+        <!-- Put image in ./assets/agentic_lifecycle.png and update the src if needed -->
+        <img src="assets/agentic_lifecycle.png" alt="ATLIS: Agentic lifecycle and layered interpretability stack" />
+        <figcaption>
+          Agentic Lifecycle &amp; Layered Interpretability Stack (ATLIS). (Update caption text as needed.)
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="mapping" class="section">
+      <h2>Mapping Interpretability to Lifecycle Stages</h2>
+      <p class="muted">
+        (Add the mapping subsection here — you can keep it high-level without repeating earlier text.)
+      </p>
+    </section>
+
+    <section id="limitations" class="section">
+      <h2>Limitations</h2>
+      <ul class="muted">
+        <li>(Example) Scalability/compute limits for mechanistic analysis in large agentic systems.</li>
+        <li>(Add more limitations here.)</li>
+      </ul>
+    </section>
+
+    <section id="case-study" class="section">
+      <h2>Illustrative Case Study</h2>
+      <p class="muted">
+        (Add your chosen case study, e.g., Agentic MRM crews, and show how ATLIS applies.)
+      </p>
+    </section>
+
+    <section id="discussion" class="section">
+      <h2>Discussion</h2>
+      <p class="muted">
+        (Add discussion and practical implementation notes here.)
+      </p>
+    </section>
+
+    <section id="bibtex" class="section">
+      <h2>BibTeX</h2>
+      <pre class="bibtex"><code>@inproceedings{atlIs2026position,
+  title     = {Position: As we move from models to systems, we need and should use the Agentic Trajectory and Layered Interpretability Stack (ATLIS)},
+  author    = {Zhu, Judy and Gandhi, Dhari and Mianroodi, Ahmad Rezaie and Ramachandran, Dhanesh and Raza, Shaina and Kocak, Sedef Akinli},
+  booktitle = {International Conference on Machine Learning (ICML) Position Paper},
+  year      = {2026},
+  note      = {Under review}
+}</code></pre>
+
+      <p class="muted small">
+        Update venue/year/status when you finalize submission details.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p class="muted small">
+        © <span id="year"></span> ATLIS authors. Built for GitHub Pages.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    // Make disabled buttons non-clickable
+    document.querySelectorAll(".btn.disabled").forEach(a => a.addEventListener("click", (e) => e.preventDefault()));
+  </script>
+</body>
+</html>
