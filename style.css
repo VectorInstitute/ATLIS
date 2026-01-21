@@ -4,8 +4,10 @@
   --muted: #4b5563;
   --border: #e5e7eb;
   --card: #f9fafb;
-  --shadow: 0 10px 25px rgba(0,0,0,0.06);
+  --link: #2563eb;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 10px 25px rgba(0,0,0,0.06);
   --radius: 14px;
+  --max: 980px;
 }
 
 * { box-sizing: border-box; }
@@ -19,62 +21,102 @@ html, body {
   line-height: 1.6;
 }
 
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Better keyboard UX */
+:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Optional: add <a class="skip-link" href="#content">Skip to content</a> */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  background: var(--text);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  z-index: 9999;
+}
+.skip-link:focus { left: 12px; }
+
 .container {
-  width: min(980px, calc(100% - 40px));
+  width: min(var(--max), calc(100% - 40px));
   margin: 0 auto;
 }
 
+/* Header */
 .site-header {
-  padding: 40px 0 18px 0;
+  padding: 52px 0 22px 0;
   border-bottom: 1px solid var(--border);
 }
 
 .kicker {
   margin: 0 0 10px 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 
 .title {
   margin: 0;
-  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .authors {
-  margin: 14px 0 18px 0;
+  margin: 14px 0 8px 0;
   color: var(--muted);
 }
 
+/* Optional: add <p class="affiliations muted"> ... </p> in HTML */
+.affiliations {
+  margin: 0 0 14px 0;
+}
+
+/* Links row (keeps your .links + .btn naming) */
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 8px 0 8px 0;
+  margin: 16px 0 8px 0;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 12px;
+  padding: 9px 12px;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 999px; /* chip-like */
   text-decoration: none;
   color: var(--text);
-  background: #fff;
-  transition: transform 120ms ease, box-shadow 120ms ease;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
 }
 
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow);
+  border-color: #cbd5e1;
+  text-decoration: none;
 }
 
 .btn.disabled {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .note {
@@ -83,6 +125,7 @@ html, body {
   font-size: 0.95rem;
 }
 
+/* Sticky TOC */
 .toc {
   position: sticky;
   top: 0;
@@ -105,51 +148,66 @@ html, body {
   text-decoration: none;
   white-space: nowrap;
   font-size: 0.95rem;
+  padding: 6px 8px;
+  border-radius: 10px;
 }
 
-.toc a:hover { color: var(--text); }
+.toc a:hover { color: var(--text); text-decoration: none; }
 
+/* Works with JS that toggles .active on the TOC link */
+.toc a.active {
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+/* Sections */
 .section {
-  padding: 26px 0;
+  padding: 34px 0;
   border-bottom: 1px solid var(--border);
+  scroll-margin-top: 72px; /* accounts for sticky toc */
 }
 
 .section h2 {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   letter-spacing: -0.01em;
+  font-size: 1.35rem;
 }
 
 .muted { color: var(--muted); }
-
 .small { font-size: 0.92rem; }
 
+/* Callout */
 .callout {
-  margin-top: 14px;
-  padding: 14px 16px;
+  margin-top: 16px;
+  padding: 16px 18px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .callout h3 {
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
   font-size: 1.02rem;
 }
 
+/* Figures */
+/* Keep your .figure class but make it consistent/responsive */
 .figure {
-  width: min(1400px, 95vw);
-  margin: 2rem auto;
-  padding: 12px;
+  margin: 18px 0 0 0;           /* align with container */
+  padding: 14px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .figure img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid var(--border);
 }
 
@@ -159,11 +217,29 @@ html, body {
   font-size: 0.95rem;
 }
 
+/* PDF embed: your HTML uses <object class="pdf">. Make it responsive */
 .pdf {
   width: 100%;
-  height: 1200px;
+  height: min(70vh, 720px);
+  border: 0;
+  border-radius: 12px;
 }
 
+/* Optional: if you switch to an iframe wrapper later */
+.embed {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255,255,255,0.7);
+}
+.embed-frame {
+  width: 100%;
+  height: min(70vh, 720px);
+  border: 0;
+  display: block;
+}
+
+/* BibTeX */
 .bibtex {
   background: #0b1020;
   color: #e5e7eb;
@@ -171,8 +247,46 @@ html, body {
   border-radius: var(--radius);
   overflow-x: auto;
   border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
 }
 
+.bibtex code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Footer */
 .footer {
-  padding: 18px 0 40px 0;
+  padding: 22px 0 44px 0;
+  border-bottom: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+  .btn { transition: none; }
+}
+
+/* Dark mode (optional, looks good on GitHub Pages) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --text: #e5e7eb;
+    --muted: #a1a1aa;
+    --border: #1f2937;
+    --card: #0f172a;
+    --link: #60a5fa;
+    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  .toc {
+    background: rgba(11,18,32,0.75);
+  }
+
+  .btn {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .embed {
+    background: rgba(255,255,255,0.02);
+  }
 }
