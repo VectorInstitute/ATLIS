@@ -3,32 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Position: From Models to Systems — ATLIS</title>
-  <meta name="description" content="ICML position paper page: Agentic Trajectory and Layered Interpretability Stack (ATLIS)" />
+  <title>ATLIS — From Models to Systems (ICML Position Paper)</title>
+  <meta name="description" content="ATLIS: Agentic Trajectory & Layered Interpretability Stack — a system-centric interpretability framework for agentic AI." />
+
+  <!-- Social previews -->
+  <meta property="og:title" content="ATLIS — From Models to Systems" />
+  <meta property="og:description" content="A system-centric interpretability framework for agentic AI systems." />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
       <p class="kicker">ICML Position Paper</p>
+
       <h1 class="title">
         Position: As we move from models to systems, we need and should use the
-        Agentic Trajectory and Layered Interpretability Stack (ATLIS)
+        <span class="nowrap">Agentic Trajectory and Layered Interpretability Stack (ATLIS)</span>
       </h1>
 
       <p class="authors">
+        <!-- You can turn these into links (Google Scholar, personal sites) like HumaniBench -->
         Judy Zhu · Dhari Gandhi · Ahmad Rezaie Mianroodi · Dhanesh Ramachandran · Shaina Raza · Sedef Akinli Kocak
       </p>
 
-      <div class="links">
-        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Paper (coming soon)</a>
-        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">arXiv (coming soon)</a>
-        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Github (coming soon)</a>
+      <p class="affiliations muted">
+        <!-- Optional: mimic the superscript affiliations style -->
+        (Add affiliations here) · (Equal contribution / corresponding author notes here)
+      </p>
+
+      <div class="link-row" role="navigation" aria-label="Project links">
+        <!-- Replace hrefs when ready -->
+        <a class="chip disabled" href="#" aria-disabled="true" title="Coming soon">Paper (PDF)</a>
+        <a class="chip disabled" href="#" aria-disabled="true" title="Coming soon">arXiv</a>
+        <a class="chip disabled" href="#" aria-disabled="true" title="Coming soon">Code</a>
+        <a class="chip" href="#bibtex">BibTeX</a>
       </div>
 
-      <p class="note">
-        *Links will be enabled once the PDF/arXiv is available.
+      <p class="note muted small">
+        Links will be enabled once the PDF/arXiv/code are public.
       </p>
     </div>
   </header>
@@ -36,104 +53,133 @@
   <nav class="toc" aria-label="Section navigation">
     <div class="container toc-inner">
       <a href="#abstract">Abstract</a>
-      <a href="#introduction">Introduction</a>
       <a href="#position">Position</a>
-      <a href="#counterarguments">Counterarguments</a>
-      <a href="#framework">Conceptual Framework</a>
-      <a href="#case-study">Illustrative Case Study</a>
-      <a href="#call-to-action">Call to Action</a>
-      <a href="#discussion">Discussion and Limitations</a>
+      <a href="#contributions">Main contributions</a>
+      <a href="#framework">ATLIS framework</a>
+      <a href="#case-study">Illustrative case study</a>
+      <a href="#call-to-action">Call to action</a>
+      <a href="#discussion">Discussion</a>
       <a href="#bibtex">BibTeX</a>
     </div>
   </nav>
 
-  <main class="container">
+  <main id="content" class="container">
     <section id="abstract" class="section">
       <h2>Abstract</h2>
       <p class="muted">
-        Agentic AI systems extend large language models with planning, tool use, memory, and multi-step control loops, shifting deployment from a single predictive model to a behavior-producing system. We argue interpretability has not made this accompanying shift: prevailing methods remain model-centric, explaining isolated outputs rather than diagnosing long-horizon plans, tool-mediated actions, and multi-agent coordination. This gap limits auditability and accountability because failures emerge from interactions among planning, memory updates, delegation, and environmental feedback. \textbf{We advance the position that interpretability for agentic AI must be system-centric, focusing on trajectories, responsibility assignment, and lifecycle dynamics, not only internal model mechanisms.} To operationalize this view, we propose the Agentic Trajectory and Layered Interpretability Stack (ATLIS), spanning real-time behavioral monitoring, mechanistic analysis, abstraction bridging, multi-agent coordination analysis, and safety and alignment oversight. We map these layers to a five-stage agent lifecycle and motivate risk-aware activation of high-cost analyses during incidents alongside continuous low-overhead monitoring in production.
-      </p>
-    </section>
-
-    <section id="introduction" class="section">
-      <h2>Introduction</h2>
-      <p class="muted">
-        (Add introduction here.)
+        Agentic AI systems extend large language models with planning, tool use, memory, and multi-step control loops,
+        shifting deployment from a single predictive model to a behavior-producing system. We argue interpretability has
+        not made this accompanying shift: prevailing methods remain model-centric, explaining isolated outputs rather than
+        diagnosing long-horizon plans, tool-mediated actions, and multi-agent coordination. This gap limits auditability
+        and accountability because failures emerge from interactions among planning, memory updates, delegation, and
+        environmental feedback. <strong>We advance the position that interpretability for agentic AI must be system-centric,
+        focusing on trajectories, responsibility assignment, and lifecycle dynamics, not only internal model mechanisms.</strong>
+        To operationalize this view, we propose ATLIS, spanning real-time behavioral monitoring, mechanistic analysis,
+        abstraction bridging, multi-agent coordination analysis, and safety and alignment oversight.
       </p>
     </section>
 
     <section id="position" class="section">
       <h2>Position</h2>
       <p class="muted">
-        The interpretability field is solving the wrong problem for the agentic era. Current methods explain how individual models compute outputs but cannot explain why an agent selected a particular plan, how coordination failed, or where accountability lies. We argue three points: (1) interpretability methods must co-evolve with agentic capabilities rather than follow them, embedding transparency into planning, tool use, and memory from the outset; (2) agentic opacity occurs at distinct layers—behavioral, mechanistic, coordination, and safety, each requiring tailored methods; and (3) interpretability must integrate across the full agent development lifecycle rather than serve as a one-time audit.
+        The interpretability field is solving the wrong problem for the agentic era. Current methods explain how individual
+        models compute outputs but cannot explain why an agent selected a particular plan, how coordination failed, or where
+        accountability lies. We argue three points: (1) interpretability methods must co-evolve with agentic capabilities
+        rather than follow them; (2) agentic opacity occurs at distinct layers—behavioral, mechanistic, coordination, and
+        safety—each requiring tailored methods; and (3) interpretability must integrate across the full agent lifecycle rather
+        than serve as a one-time audit.
       </p>
 
       <div class="callout">
-        <h3>Core Claims (placeholders)</h3>
+        <h3>Core claims</h3>
         <ol>
-          <li><strong>Coevolution over reaction.</strong> …</li>
-          <li><strong>Layered decomposition.</strong> …</li>
-          <li><strong>Lifecycle integration.</strong> …</li>
+          <li><strong>Coevolution over reaction.</strong> Build interpretability into planning, tool use, and memory from the outset.</li>
+          <li><strong>Layered decomposition.</strong> Diagnose opacity at behavioral, mechanistic, abstraction, multi-agent, and safety layers.</li>
+          <li><strong>Lifecycle integration.</strong> Apply interpretability across pre-deploy → deploy → runtime → incident → post-incident learning.</li>
         </ol>
       </div>
     </section>
 
-    <section id="counterarguments" class="section">
-      <h2>Alternate Positions and Counterarguments</h2>
-      <p class="muted">
-        (Add Counterpositions here)
-      </p>
+    <section id="contributions" class="section">
+      <h2>Main contributions</h2>
+      <ol class="muted">
+        <li>Define <em>agentic interpretability</em> as system-level explain/trace/audit across trajectories, tools, memory, and coordination.</li>
+        <li>Propose ATLIS: a five-layer interpretability stack mapped onto a five-stage agent deployment lifecycle.</li>
+        <li>Motivate risk-aware activation: low-overhead monitoring always-on; expensive mechanistic analysis triggered by incidents.</li>
+      </ol>
     </section>
 
     <section id="framework" class="section">
-      <h2>Conceptual Framework</h2>
+      <h2>ATLIS framework overview</h2>
       <p class="muted">
-        (Briefly introduce ATLIS and the lifecycle + layered stack figure)
+        The framework aligns five interpretability layers with the agentic deployment lifecycle and includes feedback loops
+        for monitoring refinement and safety/alignment revision.
       </p>
 
       <figure class="figure">
-        <object data="assets/ATLIS-framework.pdf" type="application/pdf" class="pdf">
-        </object>
-        <figcaption>
-          ATLIS (Agentic Trajectory & Layered Interpretability Stack) is an agentic deployment lifecycle and integrated interpretability stack for Agentic AI systems. This framework integrates five interpretability layers across the Agentic AI system lifecycle: (1) Real-Time Behavioral Monitoring tracks observable agent actions; (2) Mechanistic Circuit Analysis examines internal model representations; (3) Abstraction-Level Bridging connects low-level circuits to high-level reasoning; (4) Multi-Agent Analysis evaluates coordination dynamics; and (5) Safety and Alignment ensures adherence to predefined objectives. It is important to highlight that the framework incorporates two loops: blue arrows denote the monitoring refinement feedback loop, while orange arrows denote the safety and alignment revision loop. Computational overhead ranges from low (Layer 1 continuous monitoring) to high (Layer 2 full circuit extraction during incident response).
+        <div class="embed">
+          <!-- Better cross-browser behavior than <object> -->
+          <iframe
+            class="embed-frame"
+            src="assets/ATLIS-framework.pdf#view=FitH"
+            title="ATLIS framework figure (PDF)"
+            loading="lazy">
+          </iframe>
+        </div>
+        <figcaption class="muted small">
+          ATLIS integrates: (1) Real-Time Behavioral Monitoring, (2) Mechanistic Circuit Analysis,
+          (3) Abstraction-Level Bridging, (4) Multi-Agent Analysis, and (5) Safety & Alignment, across lifecycle stages.
+          <span class="nowrap">
+            <a href="assets/ATLIS-framework.pdf">Open figure</a>
+          </span>
         </figcaption>
       </figure>
     </section>
 
     <section id="case-study" class="section">
-      <h2>Illustrative Case Study</h2>
+      <h2>Illustrative case study</h2>
       <p class="muted">
-        Add illustrative Hospital Use Case.
+        (Add the hospital/palliative-care referral narrative here. You can mirror the paper’s Figure 2 explanation.)
       </p>
 
       <figure class="figure">
-        <object data="assets/ICML Illustrative Example Diagram.pdf" type="application/pdf" class="pdf">
-        </object>
-        <figcaption>
-          Illustrative Example of using ATLIS for disease diagnosis.
+        <div class="embed">
+          <iframe
+            class="embed-frame"
+            src="assets/ICML-Illustrative-Example-Diagram.pdf#view=FitH"
+            title="Illustrative case study diagram (PDF)"
+            loading="lazy">
+          </iframe>
+        </div>
+        <figcaption class="muted small">
+          Illustrative example of using ATLIS for a clinical referral workflow.
+          <span class="nowrap">
+            <a href="assets/ICML-Illustrative-Example-Diagram.pdf">Open figure</a>
+          </span>
         </figcaption>
       </figure>
     </section>
 
     <section id="call-to-action" class="section">
-      <h2>Call to Action</h2>
+      <h2>Call to action</h2>
       <ul class="muted">
-        <li>System-Level Attribution and Tracing.</li>
-        <li>Scalable Runtime Interpretability.</li>
-        <li>Benchmarks and Evaluation Infrastructure.</li>
+        <li><strong>System-level attribution and tracing</strong> across plans, memory writes/reads, tool calls, and delegation.</li>
+        <li><strong>Scalable runtime interpretability</strong> via multi-resolution observability + selective deep dives.</li>
+        <li><strong>Benchmarks & infrastructure</strong> for trajectory datasets, logging schemas, and multi-agent evaluation.</li>
       </ul>
     </section>
 
     <section id="discussion" class="section">
-      <h2>Discussion and Limitations</h2>
+      <h2>Discussion and limitations</h2>
       <p class="muted">
-        Add discussion implementation limitations with ATLIS.
+        (Summarize the “scale/overhead” constraints and the selective, risk-aware philosophy; you can also add a short
+        “what ATLIS does not claim” paragraph to pre-empt reviewer concerns.)
       </p>
     </section>
 
     <section id="bibtex" class="section">
       <h2>BibTeX</h2>
-      <pre class="bibtex"><code>@inproceedings{atlIs2026position,
+      <pre class="bibtex"><code>@inproceedings{atlis2026position,
   title     = {Position: As we move from models to systems, we need and should use the Agentic Trajectory and Layered Interpretability Stack (ATLIS)},
   author    = {Zhu, Judy and Gandhi, Dhari and Mianroodi, Ahmad Rezaie and Ramachandran, Dhanesh and Raza, Shaina and Kocak, Sedef Akinli},
   booktitle = {International Conference on Machine Learning (ICML) Position Paper},
@@ -147,16 +193,56 @@
     </section>
 
     <footer class="footer">
-      <p class="muted small">
-        © <span id="year"></span> ATLIS authors. Built for GitHub Pages.
-      </p>
+      <p class="muted small">© <span id="year"></span> ATLIS authors. Built for GitHub Pages.</p>
     </footer>
   </main>
 
+  <button class="to-top" type="button" aria-label="Back to top">↑</button>
+
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
-    // Make disabled buttons non-clickable
-    document.querySelectorAll(".btn.disabled").forEach(a => a.addEventListener("click", (e) => e.preventDefault()));
+
+    // Make disabled chips non-clickable
+    document.querySelectorAll(".chip.disabled").forEach(a =>
+      a.addEventListener("click", (e) => e.preventDefault())
+    );
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("href");
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.pushState(null, "", id);
+      });
+    });
+
+    // Active TOC link on scroll
+    const sections = [...document.querySelectorAll("main .section")];
+    const tocLinks = [...document.querySelectorAll(".toc a")];
+    const byId = new Map(tocLinks.map(a => [a.getAttribute("href").slice(1), a]));
+    const setActive = (id) => {
+      tocLinks.forEach(a => a.classList.remove("active"));
+      const link = byId.get(id);
+      if (link) link.classList.add("active");
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { rootMargin: "-20% 0px -70% 0px", threshold: [0.1, 0.2, 0.4] });
+
+    sections.forEach(s => io.observe(s));
+
+    // Back-to-top
+    const btn = document.querySelector(".to-top");
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    const toggleTop = () => btn.classList.toggle("show", window.scrollY > 600);
+    window.addEventListener("scroll", toggleTop, { passive: true });
+    toggleTop();
   </script>
 </body>
 </html>
