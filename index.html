@@ -24,12 +24,11 @@
       <div class="links">
         <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Paper (coming soon)</a>
         <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">arXiv (coming soon)</a>
-        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Code (coming soon)</a>
-        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Slides (coming soon)</a>
+        <a class="btn disabled" href="#" aria-disabled="true" title="Coming soon">Github (coming soon)</a>
       </div>
 
       <p class="note">
-        Links will be enabled once the PDF/arXiv/code are available.
+        *Links will be enabled once the PDF/arXiv is available.
       </p>
     </div>
   </header>
@@ -41,10 +40,9 @@
       <a href="#position">Position</a>
       <a href="#counterarguments">Counterarguments</a>
       <a href="#framework">Conceptual Framework</a>
-      <a href="#mapping">Mapping</a>
-      <a href="#limitations">Limitations</a>
       <a href="#case-study">Illustrative Case Study</a>
-      <a href="#discussion">Discussion</a>
+      <a href="#call-to-action">Call to Action</a>
+      <a href="#discussion">Discussion and Limitations</a>
       <a href="#bibtex">BibTeX</a>
     </div>
   </nav>
@@ -53,14 +51,14 @@
     <section id="abstract" class="section">
       <h2>Abstract</h2>
       <p class="muted">
-        (Add your abstract here.)
+        Agentic AI systems extend large language models with planning, tool use, memory, and multi-step control loops, shifting deployment from a single predictive model to a behavior-producing system. We argue interpretability has not made this accompanying shift: prevailing methods remain model-centric, explaining isolated outputs rather than diagnosing long-horizon plans, tool-mediated actions, and multi-agent coordination. This gap limits auditability and accountability because failures emerge from interactions among planning, memory updates, delegation, and environmental feedback. \textbf{We advance the position that interpretability for agentic AI must be system-centric, focusing on trajectories, responsibility assignment, and lifecycle dynamics, not only internal model mechanisms.} To operationalize this view, we propose the Agentic Trajectory and Layered Interpretability Stack (ATLIS), spanning real-time behavioral monitoring, mechanistic analysis, abstraction bridging, multi-agent coordination analysis, and safety and alignment oversight. We map these layers to a five-stage agent lifecycle and motivate risk-aware activation of high-cost analyses during incidents alongside continuous low-overhead monitoring in production.
       </p>
     </section>
 
     <section id="introduction" class="section">
       <h2>Introduction</h2>
       <p class="muted">
-        (Add the introduction here.)
+        (Add introduction here.)
       </p>
     </section>
 
@@ -83,7 +81,7 @@
     <section id="counterarguments" class="section">
       <h2>Alternate Positions and Counterarguments</h2>
       <p class="muted">
-        (Add Counterposition 1–N blocks here)
+        (Add Counterpositions here)
       </p>
     </section>
 
@@ -97,37 +95,31 @@
         <!-- Put image in ./assets/agentic_lifecycle.png and update the src if needed -->
         <img src="assets/agentic_lifecycle.png" alt="ATLIS: Agentic lifecycle and layered interpretability stack" />
         <figcaption>
-          Agentic Lifecycle &amp; Layered Interpretability Stack (ATLIS). (Update caption text as needed.)
+          Agentic Lifecycle &amp; Layered Interpretability Stack (ATLIS). (Update caption)
         </figcaption>
       </figure>
-    </section>
-
-    <section id="mapping" class="section">
-      <h2>Mapping Interpretability to Lifecycle Stages</h2>
-      <p class="muted">
-        (Add the mapping subsection here — you can keep it high-level without repeating earlier text.)
-      </p>
-    </section>
-
-    <section id="limitations" class="section">
-      <h2>Limitations</h2>
-      <ul class="muted">
-        <li>(Example) Scalability/compute limits for mechanistic analysis in large agentic systems.</li>
-        <li>(Add more limitations here.)</li>
-      </ul>
     </section>
 
     <section id="case-study" class="section">
       <h2>Illustrative Case Study</h2>
       <p class="muted">
-        (Add your chosen case study, e.g., Agentic MRM crews, and show how ATLIS applies.)
+        Add illustrative Hospital Use Case.
       </p>
     </section>
 
+    <section id="call-to-action" class="section">
+      <h2>Call to Action</h2>
+      <ul class="muted">
+        <li>System-Level Attribution and Tracing.</li>
+        <li>Scalable Runtime Interpretability.</li>
+        <li>Benchmarks and Evaluation Infrastructure.</li>
+      </ul>
+    </section>
+
     <section id="discussion" class="section">
-      <h2>Discussion</h2>
+      <h2>Discussion and Limitations</h2>
       <p class="muted">
-        (Add discussion and practical implementation notes here.)
+        Add discussion implementation limitations with ATLIS.
       </p>
     </section>
 
@@ -142,7 +134,7 @@
 }</code></pre>
 
       <p class="muted small">
-        Update venue/year/status when you finalize submission details.
+        Update venue/year/status when submission details are finalized.
       </p>
     </section>
 
