@@ -1,22 +1,4 @@
-
-
-/* --- Hero gradient like HumaniBench --- */
-.hero.hero-top {
-  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-}
-
-.publication-title {
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.publication-links .button {
-  margin: 0.15rem;
-}
-
-.nowrap { white-space: nowrap; }
-
-/* --- Full-bleed breakout (makes the framework figure much wider) --- */
+/* Full-bleed breakout */
 .full-bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -24,64 +6,37 @@
   padding: 0 24px;
 }
 
-/* --- PDF frame styling --- */
-.pdf-frame {
+/* Image frame (like a “card”) */
+.img-frame {
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.12);
-  background: #ffffff;              /* IMPORTANT: prevents black background */
+  background: #ffffff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* If you use <iframe> (not recommended), keep this */
-.pdf-frame iframe {
+.img-frame--xl {
+  max-width: 1600px;
+}
+
+.img-fill {
   width: 100%;
-  height: min(70vh, 760px);
-  border: 0;
+  height: auto;
   display: block;
-  background: #ffffff;              /* IMPORTANT */
 }
 
-/* Recommended: use <object class="pdf-object"> for better PDF compatibility */
-.pdf-object {
-  width: 100%;
-  height: min(70vh, 760px);
-  display: block;
-  border: 0;
-  background: #ffffff;              /* IMPORTANT */
+/* Optional: subtle hover zoom */
+.img-frame a { display: block; }
+.img-frame img {
+  transition: transform 160ms ease;
+}
+.img-frame a:hover img {
+  transform: scale(1.01);
 }
 
-/* --- Extra-large framework embed --- */
-.pdf-frame--xl {
-  max-width: 1600px;                /* wider */
-}
-
-/* XL heights (apply to whichever embed tag you use) */
-.pdf-frame--xl iframe,
-.pdf-frame--xl .pdf-object {
-  height: min(88vh, 980px);         /* taller */
-}
-
-/* --- BibTeX / code blocks --- */
-pre {
-  border-radius: 14px;
-  overflow-x: auto;
-}
-
-/* --- Mobile tweaks --- */
 @media (max-width: 768px) {
   .full-bleed { padding: 0 12px; }
-
-  .pdf-frame iframe,
-  .pdf-object {
-    height: 65vh;
-  }
-
-  .pdf-frame--xl iframe,
-  .pdf-frame--xl .pdf-object {
-    height: 70vh;
-  }
 }
