@@ -6,7 +6,7 @@
   padding: 0 24px;
 }
 
-/* Image frame (like a “card”) */
+/* Image frame */
 .img-frame {
   width: 100%;
   max-width: 980px;
@@ -14,7 +14,7 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.12);
-  background: #ffffff;
+  background: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
@@ -28,13 +28,19 @@
   display: block;
 }
 
-/* Optional: subtle hover zoom */
-.img-frame a { display: block; }
-.img-frame img {
-  transition: transform 160ms ease;
+/* Fallback message (only appears if image fails) */
+.img-fallback {
+  display: none;
+  padding: 18px;
+  text-align: left;
+  color: #4a4a4a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  background: #fafafa;
 }
-.img-frame a:hover img {
-  transform: scale(1.01);
+
+.img-error .img-fallback {
+  display: block;
 }
 
 @media (max-width: 768px) {
