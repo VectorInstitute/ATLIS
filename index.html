@@ -1,58 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Polyfill + MathJax (optional; remove if you don’t use LaTeX) -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<!-- Open Graph / social preview -->
-<meta property="og:title" content="ATLIS: From Models to Systems — System-Centric Interpretability for Agentic AI" />
-<meta property="og:description" content="ATLIS (Agentic Trajectory & Layered Interpretability Stack) is a system-centric interpretability framework for agentic AI systems." />
-<meta property="og:url" content="https://vectorinstitute.github.io/ATLIS/" />
-<meta property="og:type" content="website" />
-<!-- Optional: provide a real image -->
-<!-- <meta property="og:image" content="https://vectorinstitute.github.io/ATLIS/static/images/og.png" /> -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
 <head>
   <meta charset="utf-8">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="ATLIS: From Models to Systems — System-Centric Interpretability for Agentic AI" />
+  <meta property="og:description" content="ATLIS (Agentic Trajectory & Layered Interpretability Stack) is a system-centric interpretability framework for agentic AI systems." />
+  <meta property="og:url" content="https://vectorinstitute.github.io/ATLIS/" />
+  <meta property="og:type" content="website" />
+  <!-- Optional: provide a real image -->
+  <!-- <meta property="og:image" content="https://vectorinstitute.github.io/ATLIS/static/images/og.png" /> -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <meta name="description" content="ATLIS: Agentic Trajectory & Layered Interpretability Stack — a system-centric interpretability framework for agentic AI.">
   <meta name="keywords" content="ATLIS, interpretability, LLM agents, agentic systems, monitoring, mechanistic interpretability, multi-agent coordination">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>ATLIS — From Models to Systems</title>
 
+  <!-- Polyfill + MathJax (optional; remove if you don’t use LaTeX) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- Fonts (like HumaniBench) -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  <!-- Bulma (choose ONE) -->
-  <!-- Option A: CDN (recommended to start) -->
+  <!-- Bulma -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <!-- Option B: local bulma -->
-  <!-- <link rel="stylesheet" href="./static/css/bulma.min.css"> -->
 
   <!-- Icons (FontAwesome + Academicons) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <!-- Your overrides -->
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <!-- Optional favicon -->
-  <!-- <link rel="icon" href="./static/images/favicon.ico"> -->
-
-  <!-- Google Analytics (optional; replace with YOUR ID or remove) -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
+  <!-- Your overrides (matches your repo structure: style.css in root) -->
+  <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body>
@@ -62,9 +45,6 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-
-            <!-- Optional logo -->
-            <!-- <img src="./static/images/atlis_logo.png" alt="ATLIS logo" style="max-height: 140px; margin-bottom: 10px;"> -->
 
             <p class="tag is-light is-medium mb-3">ICML Position Paper</p>
 
@@ -83,11 +63,10 @@
             </div>
 
             <div class="is-size-6 publication-authors mt-2">
-              <!-- Optional affiliations -->
               <span class="author-block">Vector Institute / (add your affiliations)</span>
             </div>
 
-            <!-- Link buttons row (HumaniBench style) -->
+            <!-- Link buttons row -->
             <div class="columns is-centered mt-4">
               <div class="column has-text-centered">
                 <div class="publication-links">
@@ -139,7 +118,7 @@
     </div>
   </section>
 
-  <!-- TEASER / ONE-PARAGRAPH OVERVIEW -->
+  <!-- TEASER -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
@@ -151,16 +130,6 @@
             not only internal model mechanisms.
           </p>
         </div>
-
-        <!-- Optional teaser image -->
-        <!--
-        <div class="has-text-centered mt-5">
-          <img src="static/images/teaser.png" style="max-width: 90%;" alt="ATLIS teaser">
-          <p class="has-text-grey mt-2">
-            <b>Figure:</b> A teaser visualization of ATLIS layers and lifecycle stages.
-          </p>
-        </div>
-        -->
       </div>
     </div>
   </section>
@@ -206,19 +175,22 @@
 
       <hr>
 
+      <!-- BIG FULL-WIDTH FIGURE -->
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">ATLIS Framework Overview</h2>
 
-          <div class="content has-text-centered">
-            <!-- PDF embed: use iframe for better compatibility -->
-            <div class="pdf-frame">
+          <!-- Break out of Bulma container width -->
+          <div class="full-bleed">
+            <div class="pdf-frame pdf-frame--xl">
               <iframe
                 src="assets/ATLIS-framework.pdf#view=FitH"
                 title="ATLIS framework figure"
                 loading="lazy"></iframe>
             </div>
+          </div>
 
+          <div class="container is-max-desktop">
             <p class="content has-text-justified mt-3">
               <b>Figure:</b> ATLIS integrates five interpretability layers across the agent deployment lifecycle, with monitoring refinement and
               safety/alignment revision feedback loops.
@@ -274,7 +246,7 @@
       <h2 class="title">BibTeX</h2>
       <pre><code>@inproceedings{atlis2026position,
   title     = {Position: As we move from models to systems, we need and should use the Agentic Trajectory and Layered Interpretability Stack (ATLIS)},
-  author    = {Zhu, Judy and Gandhi, Dhari Ramachandran, Dhanesh and Rezaie Mianroodi, Ahmad and  and Raza, Shaina and Kocak, Sedef Akinli},
+  author    = {Zhu, Judy and Gandhi, Dhari and Ramachandran, Dhanesh and Mianroodi, Ahmad Rezaie and Raza, Shaina and Kocak, Sedef Akinli},
   booktitle = {International Conference on Machine Learning (ICML) Position Paper},
   year      = {2026},
   note      = {Under review}
