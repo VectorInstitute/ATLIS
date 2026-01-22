@@ -1,12 +1,6 @@
-/* Match the HumaniBench feel: soft gradient hero */
+/* Hero gradient like HumaniBench */
 .hero.hero-top {
   background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-}
-
-.hero.hero-top .title,
-.hero.hero-top .subtitle,
-.hero.hero-top p {
-  color: #111827;
 }
 
 .publication-title {
@@ -20,7 +14,7 @@
 
 .nowrap { white-space: nowrap; }
 
-/* Make embedded PDFs look clean and responsive */
+/* --- PDF frames --- */
 .pdf-frame {
   width: 100%;
   max-width: 980px;
@@ -28,7 +22,7 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.12);
-  background: white;
+  background: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
@@ -39,13 +33,34 @@
   display: block;
 }
 
-/* Slightly nicer <pre> blocks */
+/* --- Make the ATLIS Framework figure MUCH BIGGER --- */
+
+/* Break out of Bulma's max-desktop container */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 24px;
+}
+
+/* Extra-large frame for the framework figure */
+.pdf-frame--xl {
+  max-width: 1600px;          /* wider than Bulma container */
+}
+
+/* Taller so text is readable */
+.pdf-frame--xl iframe {
+  height: min(88vh, 980px);
+}
+
+/* Slightly nicer code blocks */
 pre {
   border-radius: 14px;
   overflow-x: auto;
 }
 
-/* Mobile spacing */
+/* Mobile */
 @media (max-width: 768px) {
-  .pdf-frame iframe { height: 65vh; }
+  .full-bleed { padding: 0 12px; }
+  .pdf-frame--xl iframe { height: 70vh; }
 }
