@@ -1,4 +1,6 @@
-/* Hero gradient like HumaniBench */
+
+
+/* --- Hero gradient like HumaniBench --- */
 .hero.hero-top {
   background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
 }
@@ -14,28 +16,7 @@
 
 .nowrap { white-space: nowrap; }
 
-/* --- PDF frames --- */
-.pdf-frame {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.pdf-frame iframe {
-  width: 100%;
-  height: min(70vh, 760px);
-  border: 0;
-  display: block;
-}
-
-/* --- Make the ATLIS Framework figure MUCH BIGGER --- */
-
-/* Break out of Bulma's max-desktop container */
+/* --- Full-bleed breakout (makes the framework figure much wider) --- */
 .full-bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -43,24 +24,64 @@
   padding: 0 24px;
 }
 
-/* Extra-large frame for the framework figure */
+/* --- PDF frame styling --- */
+.pdf-frame {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #ffffff;              /* IMPORTANT: prevents black background */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* If you use <iframe> (not recommended), keep this */
+.pdf-frame iframe {
+  width: 100%;
+  height: min(70vh, 760px);
+  border: 0;
+  display: block;
+  background: #ffffff;              /* IMPORTANT */
+}
+
+/* Recommended: use <object class="pdf-object"> for better PDF compatibility */
+.pdf-object {
+  width: 100%;
+  height: min(70vh, 760px);
+  display: block;
+  border: 0;
+  background: #ffffff;              /* IMPORTANT */
+}
+
+/* --- Extra-large framework embed --- */
 .pdf-frame--xl {
-  max-width: 1600px;          /* wider than Bulma container */
+  max-width: 1600px;                /* wider */
 }
 
-/* Taller so text is readable */
-.pdf-frame--xl iframe {
-  height: min(88vh, 980px);
+/* XL heights (apply to whichever embed tag you use) */
+.pdf-frame--xl iframe,
+.pdf-frame--xl .pdf-object {
+  height: min(88vh, 980px);         /* taller */
 }
 
-/* Slightly nicer code blocks */
+/* --- BibTeX / code blocks --- */
 pre {
   border-radius: 14px;
   overflow-x: auto;
 }
 
-/* Mobile */
+/* --- Mobile tweaks --- */
 @media (max-width: 768px) {
   .full-bleed { padding: 0 12px; }
-  .pdf-frame--xl iframe { height: 70vh; }
+
+  .pdf-frame iframe,
+  .pdf-object {
+    height: 65vh;
+  }
+
+  .pdf-frame--xl iframe,
+  .pdf-frame--xl .pdf-object {
+    height: 70vh;
+  }
 }
