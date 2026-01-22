@@ -1,292 +1,51 @@
-:root {
-  --bg: #ffffff;
-  --text: #111827;
-  --muted: #4b5563;
-  --border: #e5e7eb;
-  --card: #f9fafb;
-  --link: #2563eb;
-  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 10px 25px rgba(0,0,0,0.06);
-  --radius: 14px;
-  --max: 980px;
+/* Match the HumaniBench feel: soft gradient hero */
+.hero.hero-top {
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
 }
 
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.6;
+.hero.hero-top .title,
+.hero.hero-top .subtitle,
+.hero.hero-top p {
+  color: #111827;
 }
 
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
-
-/* Better keyboard UX */
-:focus-visible {
-  outline: 3px solid rgba(37, 99, 235, 0.35);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-
-/* Optional: add <a class="skip-link" href="#content">Skip to content</a> */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 12px;
-  background: var(--text);
-  color: #fff;
-  padding: 10px 12px;
-  border-radius: 12px;
-  z-index: 9999;
-}
-.skip-link:focus { left: 12px; }
-
-.container {
-  width: min(var(--max), calc(100% - 40px));
-  margin: 0 auto;
-}
-
-/* Header */
-.site-header {
-  padding: 52px 0 22px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.kicker {
-  margin: 0 0 10px 0;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.title {
-  margin: 0;
-  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
-  letter-spacing: -0.02em;
+.publication-title {
   line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.authors {
-  margin: 14px 0 8px 0;
-  color: var(--muted);
+.publication-links .button {
+  margin: 0.15rem;
 }
 
-/* Optional: add <p class="affiliations muted"> ... </p> in HTML */
-.affiliations {
-  margin: 0 0 14px 0;
-}
+.nowrap { white-space: nowrap; }
 
-/* Links row (keeps your .links + .btn naming) */
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 16px 0 8px 0;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px; /* chip-like */
-  text-decoration: none;
-  color: var(--text);
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
-  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow);
-  border-color: #cbd5e1;
-  text-decoration: none;
-}
-
-.btn.disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.note {
-  margin: 10px 0 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* Sticky TOC */
-.toc {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
-
-.toc-inner {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  padding: 10px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.toc a {
-  color: var(--muted);
-  text-decoration: none;
-  white-space: nowrap;
-  font-size: 0.95rem;
-  padding: 6px 8px;
-  border-radius: 10px;
-}
-
-.toc a:hover { color: var(--text); text-decoration: none; }
-
-/* Works with JS that toggles .active on the TOC link */
-.toc a.active {
-  color: var(--text);
-  background: var(--card);
-  border: 1px solid var(--border);
-}
-
-/* Sections */
-.section {
-  padding: 34px 0;
-  border-bottom: 1px solid var(--border);
-  scroll-margin-top: 72px; /* accounts for sticky toc */
-}
-
-.section h2 {
-  margin: 0 0 12px 0;
-  letter-spacing: -0.01em;
-  font-size: 1.35rem;
-}
-
-.muted { color: var(--muted); }
-.small { font-size: 0.92rem; }
-
-/* Callout */
-.callout {
-  margin-top: 16px;
-  padding: 16px 18px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.callout h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.02rem;
-}
-
-/* Figures */
-/* Keep your .figure class but make it consistent/responsive */
-.figure {
-  margin: 18px 0 0 0;           /* align with container */
-  padding: 14px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.figure img {
+/* Make embedded PDFs look clean and responsive */
+.pdf-frame {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-
-.figure figcaption {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* PDF embed: your HTML uses <object class="pdf">. Make it responsive */
-.pdf {
-  width: 100%;
-  height: min(70vh, 720px);
-  border: 0;
-  border-radius: 12px;
-}
-
-/* Optional: if you switch to an iframe wrapper later */
-.embed {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 16px;
   overflow: hidden;
-  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.12);
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
-.embed-frame {
+
+.pdf-frame iframe {
   width: 100%;
-  height: min(70vh, 720px);
+  height: min(70vh, 760px);
   border: 0;
   display: block;
 }
 
-/* BibTeX */
-.bibtex {
-  background: #0b1020;
-  color: #e5e7eb;
-  padding: 14px 16px;
-  border-radius: var(--radius);
+/* Slightly nicer <pre> blocks */
+pre {
+  border-radius: 14px;
   overflow-x: auto;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: var(--shadow);
 }
 
-.bibtex code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-/* Footer */
-.footer {
-  padding: 22px 0 44px 0;
-  border-bottom: none;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto !important; }
-  .btn { transition: none; }
-}
-
-/* Dark mode (optional, looks good on GitHub Pages) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1220;
-    --text: #e5e7eb;
-    --muted: #a1a1aa;
-    --border: #1f2937;
-    --card: #0f172a;
-    --link: #60a5fa;
-    --shadow: 0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.35);
-  }
-
-  .toc {
-    background: rgba(11,18,32,0.75);
-  }
-
-  .btn {
-    background: rgba(255,255,255,0.03);
-  }
-
-  .embed {
-    background: rgba(255,255,255,0.02);
-  }
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .pdf-frame iframe { height: 65vh; }
 }
