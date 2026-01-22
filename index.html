@@ -8,8 +8,6 @@
   <meta property="og:description" content="ATLIS (Agentic Trajectory & Layered Interpretability Stack) is a system-centric interpretability framework for agentic AI systems." />
   <meta property="og:url" content="https://vectorinstitute.github.io/ATLIS/" />
   <meta property="og:type" content="website" />
-  <!-- Optional: provide a real image -->
-  <!-- <meta property="og:image" content="https://vectorinstitute.github.io/ATLIS/static/images/og.png" /> -->
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -19,23 +17,23 @@
 
   <title>ATLIS — From Models to Systems</title>
 
-  <!-- Polyfill + MathJax (optional; remove if you don’t use LaTeX) -->
+  <!-- Polyfill + MathJax (optional) -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <!-- Fonts (like HumaniBench) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <!-- Bulma -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-  <!-- Icons (FontAwesome + Academicons) -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <!-- Your overrides (matches your repo structure: style.css in root) -->
-  <link rel="stylesheet" href="style.css?v=1">
+  <!-- Your overrides -->
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -73,7 +71,7 @@
 
                   <!-- PDF -->
                   <span class="link-block">
-                    <a href="assets/ATLIS-paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <a href="assets/ATLIS-paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
                       <span class="icon"><i class="fas fa-file-pdf"></i></span>
                       <span>Paper</span>
                     </a>
@@ -175,28 +173,29 @@
 
       <hr>
 
-      <!-- BIG FULL-WIDTH FIGURE -->
+      <!-- BIG FULL-WIDTH FIGURE (IMAGE) -->
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">ATLIS Framework Overview</h2>
 
-          <!-- Break out of Bulma container width -->
           <div class="full-bleed">
-            <div class="pdf-frame pdf-frame--xl">
-              <object data="assets/ATLIS-framework.pdf#view=FitH" type="application/pdf" class="pdf-object">
-                <p style="padding:16px;">
-                  Your browser can’t display embedded PDFs.
-                  <a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">Open the figure PDF</a>.
-                </p>
-              </object>
-            </div>
+            <figure class="img-frame img-frame--xl">
+              <a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener" title="Open PDF in a new tab">
+                <img
+                  src="assets/ATLIS-framework_page-0001.jpg"
+                  alt="ATLIS Framework Overview"
+                  class="img-fill">
+              </a>
+            </figure>
           </div>
 
           <div class="container is-max-desktop">
             <p class="content has-text-justified mt-3">
               <b>Figure:</b> ATLIS integrates five interpretability layers across the agent deployment lifecycle, with monitoring refinement and
               safety/alignment revision feedback loops.
-              <span class="nowrap"><a href="assets/ATLIS-framework.pdf" target="_blank">Open PDF</a></span>
+              <span class="nowrap">
+                <a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">Open PDF</a>
+              </span>
             </p>
           </div>
         </div>
@@ -204,21 +203,26 @@
 
       <hr>
 
+      <!-- CASE STUDY (IMAGE + FIXED FILENAMES) -->
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">Illustrative Case Study</h2>
 
           <div class="content has-text-centered">
-            <div class="pdf-frame">
-              <iframe
-                src="assets/ICML-Illustrative-Example-Diagram.pdf#view=FitH"
-                title="Illustrative case study diagram"
-                loading="lazy"></iframe>
-            </div>
+            <figure class="img-frame">
+              <a href="assets/ICML%20Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener" title="Open PDF in a new tab">
+                <img
+                  src="assets/ICML%20Illustrative%20Example%20Diagram_page-0001.jpg"
+                  alt="Illustrative Case Study Diagram"
+                  class="img-fill">
+              </a>
+            </figure>
 
             <p class="content has-text-justified mt-3">
               <b>Figure:</b> Illustrative example of using ATLIS for a clinical workflow.
-              <span class="nowrap"><a href="assets/ICML-Illustrative-Example-Diagram.pdf" target="_blank">Open PDF</a></span>
+              <span class="nowrap">
+                <a href="assets/ICML%20Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">Open PDF</a>
+              </span>
             </p>
           </div>
         </div>
