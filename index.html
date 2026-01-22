@@ -32,8 +32,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <!-- Your overrides -->
-  <link rel="stylesheet" href="style.css?v=2">
+  <!-- Your overrides (repo has style.css in root) -->
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -69,9 +69,13 @@
               <div class="column has-text-centered">
                 <div class="publication-links">
 
-                  <!-- PDF -->
+                  <!-- Paper PDF
+                       IMPORTANT: you currently do NOT have ATLIS-paper.pdf in your repo screenshot.
+                       Either upload it to assets/ and name it ATLIS-paper.pdf, OR keep this disabled.
+                  -->
                   <span class="link-block">
-                    <a href="assets/ATLIS-paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                    <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled"
+                       aria-disabled="true" title="Upload the paper PDF to assets/ first">
                       <span class="icon"><i class="fas fa-file-pdf"></i></span>
                       <span>Paper</span>
                     </a>
@@ -154,7 +158,7 @@
     </div>
   </section>
 
-  <!-- MAIN CONTENT SECTIONS -->
+  <!-- MAIN CONTENT -->
   <section class="section">
     <div class="container is-max-desktop">
 
@@ -173,7 +177,7 @@
 
       <hr>
 
-      <!-- BIG FULL-WIDTH FIGURE (IMAGE) -->
+      <!-- ATLIS FRAMEWORK IMAGE (CORRECT PATHS) -->
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">ATLIS Framework Overview</h2>
@@ -184,8 +188,13 @@
                 <img
                   src="assets/ATLIS-framework_page-0001.jpg"
                   alt="ATLIS Framework Overview"
-                  class="img-fill">
+                  class="img-fill"
+                  onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
               </a>
+              <div class="img-fallback">
+                Couldn’t load <code>assets/ATLIS-framework_page-0001.jpg</code>.
+                Check filename + capitalization in your repo.
+              </div>
             </figure>
           </div>
 
@@ -193,9 +202,7 @@
             <p class="content has-text-justified mt-3">
               <b>Figure:</b> ATLIS integrates five interpretability layers across the agent deployment lifecycle, with monitoring refinement and
               safety/alignment revision feedback loops.
-              <span class="nowrap">
-                <a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">Open PDF</a>
-              </span>
+              <span class="nowrap"><a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">Open PDF</a></span>
             </p>
           </div>
         </div>
@@ -203,7 +210,7 @@
 
       <hr>
 
-      <!-- CASE STUDY (IMAGE + FIXED FILENAMES) -->
+      <!-- CASE STUDY IMAGE (CORRECT PATHS + ENCODED SPACES) -->
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">Illustrative Case Study</h2>
@@ -214,15 +221,18 @@
                 <img
                   src="assets/ICML%20Illustrative%20Example%20Diagram_page-0001.jpg"
                   alt="Illustrative Case Study Diagram"
-                  class="img-fill">
+                  class="img-fill"
+                  onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
               </a>
+              <div class="img-fallback">
+                Couldn’t load <code>assets/ICML%20Illustrative%20Example%20Diagram_page-0001.jpg</code>.
+                Check the filename in <code>/assets</code> (spaces + capitalization).
+              </div>
             </figure>
 
             <p class="content has-text-justified mt-3">
               <b>Figure:</b> Illustrative example of using ATLIS for a clinical workflow.
-              <span class="nowrap">
-                <a href="assets/ICML%20Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">Open PDF</a>
-              </span>
+              <span class="nowrap"><a href="assets/ICML%20Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">Open PDF</a></span>
             </p>
           </div>
         </div>
@@ -275,7 +285,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Disable “coming soon” links
     document.querySelectorAll(".is-disabled").forEach(a => {
       a.addEventListener("click", (e) => e.preventDefault());
       a.style.pointerEvents = "none";
