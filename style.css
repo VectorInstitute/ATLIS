@@ -68,6 +68,20 @@ a:hover{ text-decoration:underline; }
   min-width:0;
 }
 
+/* Vector logo */
+.brand-logo-link{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+
+.brand-logo{
+  height: 44px;
+  width: auto;
+  display:block;
+  opacity: 0.95;
+}
+
 .brand-text{
   display:flex;
   flex-direction:column;
@@ -278,11 +292,6 @@ h3{
   grid-template-columns: 1fr 1fr;
   gap:18px;
 }
-@media (max-width: 920px){
-  .two-col{ grid-template-columns: 1fr; }
-  h1{ font-size: 1.7rem; }
-  .brand-subtitle{ max-width: 100%; white-space:normal; }
-}
 
 /* Figures */
 .figure-grid{
@@ -387,3 +396,15 @@ figcaption{
 .footer-links{ display:flex; gap:14px; flex-wrap:wrap; }
 .footer-links a{ color:var(--muted); font-weight:700; font-size:.9rem; }
 .footer-links a:hover{ color:var(--ink); text-decoration:none; }
+
+/* Responsive */
+@media (max-width: 920px){
+  .two-col{ grid-template-columns: 1fr; }
+  h1{ font-size: 1.7rem; }
+  .brand-subtitle{ max-width: 100%; white-space:normal; }
+  .brand-logo{ height: 38px; }
+}
+
+@media (max-width: 520px){
+  .brand-logo{ height: 34px; }
+}
