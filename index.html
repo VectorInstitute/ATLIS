@@ -45,6 +45,7 @@
         <a href="#abstract">Abstract</a>
         <a href="#claims">Core claims</a>
         <a href="#figures">Figures</a>
+        <a href="#usecase">Use case</a>
         <a href="#cta">Call to action</a>
         <a href="#bibtex">BibTeX</a>
       </nav>
@@ -65,15 +66,15 @@
 
           <div class="paper-meta">
             <div><span class="k">Authors:</span>
-              Judy Zhu, Dhari Gandhi, Ahmad Rezaie Mianroodi, Dhanesh Ramachandram, Shaina Raza, Sedef Akinli Kocak
+              Judy Zhu<sup>1</sup>, Dhari Gandhi<sup>1</sup>, Dhanesh Ramachandram<sup>1</sup>, Ahmad Rezaie Mianroodi<sup>1,2</sup>, Shaina Raza<sup>1</sup>, Sedef Akinli Kocak<sup>1</sup>
             </div>
-            <div><span class="k">Affiliation:</span> Vector Institute / Dalhousie University</div>
+            <div><span class="k">Affiliations:</span> <sup>1</sup>Vector Institute, <sup>2</sup>Dalhousie University</div>
           </div>
 
           <div class="cta-row">
             <!-- Replace href when public -->
             <a class="btn btn-disabled" href="#" aria-disabled="true" title="Upload the paper PDF to assets/ then link it">📄 Paper</a>
-            <a class="btn btn-secondary btn-disabled" href="#" aria-disabled="true" title="Coming soon">arXiv</a>
+            <a class="btn btn-secondary btn-disabled" href="#" aria-disabled="true" title="Coming soon">TechRxiv</a>
             <a class="btn btn-secondary btn-disabled" href="#" aria-disabled="true" title="Coming soon">Code</a>
             <button class="btn btn-secondary" id="copyBibBtn" type="button">📋 Copy BibTeX</button>
           </div>
@@ -153,7 +154,7 @@
       <div class="wrap">
         <h2>Core claims</h2>
 
-        <div class="two-col">
+        <div class="three-col">
           <div class="card">
             <div class="card-h">Claim 1</div>
             <div class="card-b">
@@ -167,12 +168,12 @@
               <strong>Layered decomposition.</strong> Diagnose opacity across behavioral, mechanistic, abstraction, multi-agent, and safety layers.
             </div>
           </div>
-        </div>
 
-        <div class="card" style="margin-top:18px;">
-          <div class="card-h">Claim 3</div>
-          <div class="card-b">
-            <strong>Lifecycle integration.</strong> Interpretability must span pre-deployment audits, runtime monitoring, and incident response.
+          <div class="card">
+            <div class="card-h">Claim 3</div>
+            <div class="card-b">
+              <strong>Lifecycle integration.</strong> Interpretability must span pre-deployment audits, runtime monitoring, and incident response.
+            </div>
           </div>
         </div>
       </div>
@@ -222,11 +223,96 @@
       </div>
     </section>
 
+    <!-- USE CASE -->
+    <section id="usecase" class="section">
+      <div class="wrap">
+        <h2>Use Case: Palliative Care Referral</h2>
+        
+        <div class="usecase-content">
+          <!-- Failure & Solution Text -->
+          <div class="usecase-text">
+            <div class="usecase-block">
+              <h3>🔴 The Concrete Failure</h3>
+              <p>
+                Consider a hospital deploying an agentic system for palliative care referral across two disease sites: lung and gastrointestinal (GI) cancer. 
+                Despite identical referral criteria and subagent components, the lung site begins referring patients <strong>later</strong> than GI for matched risk profiles.
+              </p>
+              <p>
+                In one system, short-term symptom improvement stored in memory delays escalation; in the other, accumulated hospitalizations trigger earlier referral. 
+                The divergence emerges only over time, due to differences in how longitudinal evidence is stored and propagated through monitoring and planning.
+              </p>
+              <p class="muted" style="font-style:italic;">
+                <strong>Why model-centric methods fail:</strong> Feature attribution (SHAP, Integrated Gradients) explains individual predictions, but the divergence arises from longitudinal interactions between monitoring, memory, planning, and referral timing.
+              </p>
+            </div>
+
+            <div class="usecase-block">
+              <h3>🟢 How ATLIS Surfaces the Divergence</h3>
+              <p>
+                ATLIS surfaces this drift <strong>before</strong> it causes harm. <strong>Layer 1</strong> flags a systematic delay in lung referrals relative to GI for comparable patients.
+                It then traces the root cause through <strong>Layers 2–4</strong> using inter-agent coordination signals and mechanistic differences.
+              </p>
+              <p>
+                <strong>Layer 3</strong> maps differences in symptom vs. hospitalization weighting to divergent clinical reasoning pathways, while <strong>Layer 5</strong> evaluates whether referral timing remains within prescribed safety bounds and escalates borderline cases for human-in-the-loop clinician review.
+              </p>
+              <p>
+                Because ATLIS is embedded across the deployment lifecycle, findings feed back into updated simulations (pre-deployment), refined runtime baselines (operations), and recalibrated orchestration policies (post-incident learning).
+              </p>
+            </div>
+          </div>
+
+          <!-- Cyclical Diagram -->
+          <div class="usecase-diagram">
+            <div class="layer-cycle">
+              <div class="cycle-title">ATLIS Layers Applied</div>
+              <div class="cycle-ring">
+                <div class="layer-node layer-1" data-layer="1">
+                  <span class="layer-num">1</span>
+                  <span class="layer-name">Behavioral Monitoring</span>
+                  <span class="layer-desc">Flag referral delays</span>
+                </div>
+                <div class="layer-connector c1-2">→</div>
+                <div class="layer-node layer-2" data-layer="2">
+                  <span class="layer-num">2</span>
+                  <span class="layer-name">Mechanistic Analysis</span>
+                  <span class="layer-desc">Trace internal circuits</span>
+                </div>
+                <div class="layer-connector c2-3">→</div>
+                <div class="layer-node layer-3" data-layer="3">
+                  <span class="layer-num">3</span>
+                  <span class="layer-name">Abstraction Bridging</span>
+                  <span class="layer-desc">Map reasoning pathways</span>
+                </div>
+                <div class="layer-connector c3-4">→</div>
+                <div class="layer-node layer-4" data-layer="4">
+                  <span class="layer-num">4</span>
+                  <span class="layer-name">Multi-Agent Analysis</span>
+                  <span class="layer-desc">Analyze coordination</span>
+                </div>
+                <div class="layer-connector c4-5">→</div>
+                <div class="layer-node layer-5" data-layer="5">
+                  <span class="layer-num">5</span>
+                  <span class="layer-name">Safety & Alignment</span>
+                  <span class="layer-desc">Validate & escalate</span>
+                </div>
+              </div>
+              <div class="cycle-feedback">
+                <span class="feedback-arrow">↺</span>
+                <span class="feedback-text">Continuous feedback loop across lifecycle stages</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CALL TO ACTION -->
-    <section id="cta" class="section">
+    <section id="cta" class="section alt">
       <div class="wrap">
         <h2>Call to Action</h2>
 
+        <!-- Research Priorities -->
+        <h3 class="subsection-title">🔬 Research Priorities</h3>
         <div class="action-grid">
           <div class="action-card">
             <div class="action-header">
@@ -261,6 +347,46 @@
             </ul>
           </div>
         </div>
+
+        <!-- Broader Implications -->
+        <h3 class="subsection-title" style="margin-top: 36px;">🌐 Broader Implications</h3>
+        <div class="action-grid">
+          <div class="action-card impl-card">
+            <div class="action-header">
+              <div class="action-icon">👩‍💻</div>
+              <h3>For Practitioners</h3>
+            </div>
+            <ul class="bullets">
+              <li>Adopt layered monitoring from day one—not as an afterthought.</li>
+              <li>Design agent architectures with interpretability hooks at each component.</li>
+              <li>Establish incident response workflows that leverage trajectory logs.</li>
+            </ul>
+          </div>
+
+          <div class="action-card impl-card">
+            <div class="action-header">
+              <div class="action-icon">⚖️</div>
+              <h3>For Regulators</h3>
+            </div>
+            <ul class="bullets">
+              <li>Require system-level audit trails, not just model cards.</li>
+              <li>Define accountability standards for multi-agent deployments.</li>
+              <li>Mandate human-in-the-loop escalation for high-stakes decisions.</li>
+            </ul>
+          </div>
+
+          <div class="action-card impl-card">
+            <div class="action-header">
+              <div class="action-icon">🏢</div>
+              <h3>For Organizations</h3>
+            </div>
+            <ul class="bullets">
+              <li>Invest in interpretability infrastructure alongside capability development.</li>
+              <li>Build cross-functional teams spanning ML, systems, and domain expertise.</li>
+              <li>Treat post-incident learning as a continuous improvement process.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -270,7 +396,7 @@
         <h2>BibTeX</h2>
         <pre class="bib" id="bibBlock"><code>@inproceedings{atlis2026position,
   title     = {Position: Accountable Deployment of Agentic AI Demands Layered, System-Level Interpretability},
-  author    = {Zhu, Judy and Gandhi, Dhari and Rezaie Mianroodi, Ahmad and Ramachandram, Dhanesh and Raza, Shaina and Kocak, Sedef Akinli},
+  author    = {Zhu, Judy and Gandhi, Dhari and Ramachandram, Dhanesh and Rezaie Mianroodi, Ahmad and Raza, Shaina and Kocak, Sedef Akinli},
   booktitle = {TBD},
   year      = {2026},
   note      = {Under review}
