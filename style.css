@@ -330,6 +330,16 @@ h3{
   background:#fff;
 }
 
+.figure-large img {
+  max-height: none;
+  padding: 16px;
+}
+
+.figure-large img {
+  max-height: none;
+  padding: 16px;
+}
+
 figcaption{
   padding:14px 16px;
   color:var(--muted);
