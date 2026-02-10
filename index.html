@@ -179,6 +179,62 @@
             </div>
           </div>
         </div>
+
+        <h3 class="subsection-title" style="margin-top: 32px;">Alternate Views &amp; Our Responses</h3>
+
+        <div class="alt-views-grid">
+          <div class="alt-view-card">
+            <div class="alt-view-objection">
+              <span class="alt-view-num">1</span>
+              <div>
+                <div class="alt-view-label">Interpretability should follow, not co-evolve</div>
+                <p>Interpretability for agentic systems should come after mature architectures are developed. Investing too early may not help, since future agents could rely on very different representations. This invokes <em>Polanyi's Paradox</em>—agents can be competent without being able to explicitly explain how they do so.</p>
+              </div>
+            </div>
+            <div class="alt-view-response">
+              <strong>Response:</strong> Interpretability research has historically lagged behind capability development, leaving practitioners dependent on explanations that are difficult to validate. Retrofitting interpretability after deployment is harder than building it in from the start. Co-evolution ensures that transparency mechanisms are tested and refined alongside capabilities.
+            </div>
+          </div>
+
+          <div class="alt-view-card">
+            <div class="alt-view-objection">
+              <span class="alt-view-num">2</span>
+              <div>
+                <div class="alt-view-label">Behavioral control is sufficient</div>
+                <p>Detailed interpretability is not required for safe deployment. Alignment can be achieved through RLHF, constitutional objectives, and rigorous black-box evaluation. Strong performance on benchmarks and behavioral checks are sufficient to build trust.</p>
+              </div>
+            </div>
+            <div class="alt-view-response">
+              <strong>Response:</strong> Behavioral testing may show that a system performs well on average, but cannot explain why a multi-step plan failed or how errors propagated across components. Without system-level interpretability, failures cannot be reliably traced, audited, or corrected. Interpretability is not opposed to behavioral control but complementary to it.
+            </div>
+          </div>
+
+          <div class="alt-view-card">
+            <div class="alt-view-objection">
+              <span class="alt-view-num">3</span>
+              <div>
+                <div class="alt-view-label">Holistic rather than layered interpretability</div>
+                <p>Agentic systems should be explained as integrated wholes rather than decomposed into separate layers. Separating behavioral, mechanistic, coordination, and safety layers may obscure tightly coupled interactions and produce fragmented explanations that miss cross-layer dependencies.</p>
+              </div>
+            </div>
+            <div class="alt-view-response">
+              <strong>Response:</strong> Layered interpretability does not treat layers as isolated silos. It decomposes the system into analytically distinct levels while preserving the ability to trace interactions across them. Failures often originate in specific subsystems; distinguishing a tool-routing error from a planning failure requires layer-specific analysis before tracing how the error cascaded.
+            </div>
+          </div>
+
+          <div class="alt-view-card">
+            <div class="alt-view-objection">
+              <span class="alt-view-num">4</span>
+              <div>
+                <div class="alt-view-label">Lifecycle-integrated interpretability is computationally impractical</div>
+                <p>Continuous integration across the deployment lifecycle is impractical. Runtime logging, monitoring, and tracing can add computational overhead, increase latency, and complicate deployment in multi-agent systems operating under real-time constraints.</p>
+              </div>
+            </div>
+            <div class="alt-view-response">
+              <strong>Response:</strong> Practical constraints are real, but restricting interpretability to pre-deployment audits or post-failure analysis is insufficient. ATLIS addresses this through lightweight, risk-aware monitoring: Layer 1 behavioral tracking runs continuously with low overhead, while deeper analysis (Layers 2–4) activates only when anomalies are detected. This graduated approach balances interpretability with computational cost.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
