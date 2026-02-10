@@ -102,20 +102,98 @@
       </div>
     </section>
 
-    <!-- CORE CLAIMS -->
+    <!-- INTRODUCTION -->
     <section id="introduction" class="section">
       <div class="wrap">
         <h2>Introduction</h2>
-        <p class="lead">
-          <strong>Agentic AI systems</strong> extend LLMs with planning, tool use, memory, and multi-step control loops.
-          As these systems grow more complex and deployed in high-stakes domains (healthcare, finance, critical infrastructure),
-          the need for transparent, accountable interpretability becomes critical.
+
+        <!-- Opening question -->
+        <p class="lead intro-opening">
+          When an agentic system fails, who is accountable and how do we determine why? Unlike static models that produce isolated predictions,
+          agentic systems plan, use tools, maintain memory, and coordinate actions over time. Failures may arise not only from incorrect outputs,
+          but also from evolving internal state and errors across components that are difficult to trace.
         </p>
-        <p class="lead" style="margin-top: 16px;">
-          However, traditional interpretability methods focus on explaining individual model predictions or internal representations.
-          They cannot explain system-level failures that emerge from trajectories over time—how memory accumulates, plans diverge,
-          tools are misused, or multi-agent coordination breaks down. This gap between model-centric interpretability and system-level accountability
-          creates a blind spot for practitioners, regulators, and organizations deploying agentic AI.
+
+        <!-- The Gap: visual comparison -->
+        <div class="intro-compare">
+          <div class="intro-compare-card intro-compare-old">
+            <div class="intro-compare-label">🔬 Model-Centric Interpretability</div>
+            <p>Feature attributions, saliency maps, reasoning traces, and circuit analysis—designed to explain <em>individual model outputs</em>,
+            not the behavior of systems composed of multiple agents acting over time.</p>
+            <ul class="intro-limits">
+              <li>Explains single predictions</li>
+              <li>Focuses on internal activations</li>
+              <li>Cannot trace multi-step trajectories</li>
+              <li>Misses inter-component failures</li>
+            </ul>
+          </div>
+
+          <div class="intro-compare-arrow">→</div>
+
+          <div class="intro-compare-card intro-compare-new">
+            <div class="intro-compare-label">🌐 System-Centric Interpretability</div>
+            <p>Traces behavior, responsibility, and information flow across the <em>full agentic architecture</em>—
+            explaining how reasoning, memory, tools, and coordination across agents contribute to outcomes.</p>
+            <ul class="intro-limits intro-gains">
+              <li>Explains trajectories over time</li>
+              <li>Traces responsibility assignment</li>
+              <li>Captures inter-agent dynamics</li>
+              <li>Integrates across the lifecycle</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Why this matters: real-world failures -->
+        <h3 class="intro-subhead">Real-World Failures Demand System-Level Analysis</h3>
+        <p class="lead" style="margin-bottom: 16px;">
+          Recent deployments illustrate that unsafe outcomes stem not from isolated model errors but from cumulative system-level dynamics.
+        </p>
+
+        <div class="intro-failures">
+          <div class="intro-failure-card">
+            <div class="intro-failure-icon">🚗</div>
+            <div>
+              <div class="intro-failure-title">Semi-Autonomous Driving Incidents</div>
+              <p>A preliminary evaluation by NHTSA found that semi-autonomous driving incidents involved failures spanning perception, planning,
+              and human-machine handoff—including missed traffic signals, unexpected lane changes, and inadequate driver warnings—none
+              attributable to a single model output.</p>
+            </div>
+          </div>
+
+          <div class="intro-failure-card">
+            <div class="intro-failure-icon">🏙️</div>
+            <div>
+              <div class="intro-failure-title">NYC Municipal Chatbot</div>
+              <p>An investigation by The Markup revealed that a New York City municipal chatbot advised employers they could take workers' tips
+              and that landlords could discriminate against voucher recipients, violating local law. These failures arose from inadequate constraint
+              enforcement, poor grounding to authoritative sources, and absent lifecycle oversight.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core argument callout -->
+        <div class="callout callout-position" style="margin-top: 24px;">
+          <div class="callout-icon">💡</div>
+          <div>
+            <div class="callout-title">Our Core Argument</div>
+            <p>
+              <strong>Interpretability for agentic systems must move from model-centric analysis to system-centric layered analysis</strong>,
+              where system-centric implies tracing behavior, responsibility, and information flow across the full agentic architecture.
+            </p>
+          </div>
+        </div>
+
+        <!-- How ATLIS differs -->
+        <h3 class="intro-subhead">How Our Position Differs</h3>
+        <p class="lead">
+          Recent work addresses specific aspects of agentic interpretability: automated failure attribution for identifying which agent failed,
+          traceability in linear pipelines, and causal metrics for collective behavior. However, these methods target individual diagnostic tasks
+          rather than the architectural shift required to govern agentic systems end-to-end.
+        </p>
+        <p class="lead" style="margin-top: 12px;">
+          Our position differs by defining the necessary layers of agentic system observability and integrating them across the deployment lifecycle.
+          Rather than post-hoc blame assignment, we offer a blueprint that situates existing diagnostic tools within a layered framework and
+          identifies where current methods fall short.
         </p>
       </div>
     </section>
