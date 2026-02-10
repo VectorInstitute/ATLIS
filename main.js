@@ -6,7 +6,6 @@
   // Copy BibTeX
   const btn = document.getElementById("copyBibBtn");
   const bib = document.getElementById("bibBlock");
-
   if (btn && bib) {
     btn.addEventListener("click", async () => {
       const text = bib.innerText.trim();
