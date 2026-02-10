@@ -392,6 +392,13 @@ figcaption{
 .bullets{ margin:0; padding-left:18px; color:var(--muted); }
 .bullets li{ margin: 8px 0; }
 
+.card-body-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 /* Bib */
 .bib{
   padding:16px 18px;
