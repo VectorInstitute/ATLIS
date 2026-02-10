@@ -140,51 +140,43 @@
     <section id="position" class="section alt">
       <div class="wrap">
         <h2>Position Statement and Alternative Views</h2>
-        
-        <div class="three-col">
-          <div class="card">
-            <div class="card-h">❌ Model-Centric Approach</div>
-            <div class="card-b">
-              Focuses on explaining isolated outputs or internal activations. Misses failures emerging from planning trajectories, 
-              memory interactions, and multi-agent coordination over time.
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="card-h">❓ Reactive Approaches</div>
-            <div class="card-b">
-              Respond to failures after they occur. Cannot anticipate divergence, detect drift, or surface risks before harm is caused.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-h">✅ Our Position: System-Centric</div>
-            <div class="card-b">
-              Explain trajectories, responsibility assignment, and lifecycle dynamics. Embed interpretability throughout the deployment lifecycle.
-            </div>
-          </div>
-        </div>
-
-        <div class="callout callout-position" style="margin-top: 20px;">
+        <div class="callout callout-position">
           <div class="callout-icon">🎯</div>
           <div>
-            <div class="callout-title">Our Position</div>
+            <div class="callout-title">Position</div>
             <p>
-              Interpretability must move from <strong>model-centric</strong> to <strong>system-centric layered analysis</strong>—tracing
-              behavior, responsibility, and information flow across the full agentic architecture.
+              The interpretability field is solving the wrong problem for the agentic era. Current methods explain how individual models
+              compute outputs but cannot explain why an agent selected a particular plan, how multi-agent coordination failed, or where
+              accountability lies within a system. We argue three points: (1) interpretability methods must co-evolve with agentic capabilities
+              rather than follow them, embedding transparency into planning, tool use, and memory from the outset; (2) agentic opacity occurs
+              at distinct layers such as behavioral, mechanistic, coordination, and safety, each requiring tailored methods; and
+              (3) interpretability must integrate across the full agent development lifecycle rather than serve as a one-time audit.
             </p>
           </div>
         </div>
+        
+        <div class="three-col" style="margin-top: 20px;">
+          <div class="card">
+            <div class="card-h">Claim 1: Coevolution over reaction</div>
+            <div class="card-b">
+              Interpretability methods must co-develop alongside agentic capabilities, not be retrofitted post-deployment.
+            </div>
+          </div>
 
-        <div class="callout" style="margin-top: 14px;">
-          <div class="callout-icon">💡</div>
-          <div>
-            <div class="callout-title">How ATLIS Differs</div>
-            <p>
-              Existing work targets individual diagnostic tasks—automated failure attribution, pipeline traceability, causal metrics.
-              ATLIS defines the necessary <strong>layers of agentic system observability</strong> and integrates them across the deployment lifecycle:
-              a blueprint, not post-hoc blame assignment.
-            </p>
+          <div class="card">
+            <div class="card-h">Claim 2: Layered decomposition</div>
+            <div class="card-b">
+              Agentic opacity occurs at distinct layers (e.g., behavioral patterns, internal circuits, abstraction mappings, 
+              multi-agent coordination, and safety constraints). Transparency requires tailored and layered analysis.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h">Claim 3: Lifecycle integration</div>
+            <div class="card-b">
+              Interpretability must be applied throughout the full agent deployment lifecycle, rather than as a one-time audit.
+            </div>
           </div>
         </div>
       </div>
@@ -199,36 +191,6 @@
           (Agentic Trajectory and Layered Interpretability Stack)—a comprehensive framework spanning five interpretability layers
           across the entire agent deployment lifecycle.
         </p>
-      </div>
-    </section>
-
-    <!-- CORE CLAIMS -->
-    <section id="core-claims" class="section">
-      <div class="wrap">
-        <h2>Core claims</h2>
-
-        <div class="three-col">
-          <div class="card">
-            <div class="card-h">Claim 1</div>
-            <div class="card-b">
-              <strong>Coevolution over reaction.</strong> Embed interpretability into planning, tool use, and memory from the outset.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-h">Claim 2</div>
-            <div class="card-b">
-              <strong>Layered decomposition.</strong> Diagnose opacity across behavioral, mechanistic, abstraction, multi-agent, and safety layers.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-h">Claim 3</div>
-            <div class="card-b">
-              <strong>Lifecycle integration.</strong> Interpretability must span pre-deployment audits, runtime monitoring, and incident response.
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
