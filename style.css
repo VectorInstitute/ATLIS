@@ -405,24 +405,11 @@ figcaption{
 }
 
 /* Use Case Section */
-.usecase-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-  margin-top: 20px;
-}
-
-@media (max-width: 900px) {
-  .usecase-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-.usecase-text {
+.usecase-blocks {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-top: 20px;
 }
 
 .usecase-block {
@@ -446,11 +433,6 @@ figcaption{
 
 .usecase-block p:last-child {
   margin-bottom: 0;
-}
-
-.usecase-diagram {
-  position: sticky;
-  top: 100px;
 }
 
 .layer-cycle {
