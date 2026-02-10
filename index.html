@@ -348,41 +348,52 @@
     <section id="cta" class="section">
       <div class="wrap">
         <h2>Call to Action and Implementation Plan</h2>
+        <p class="lead">
+          Adopting system-centric interpretability for agentic systems raises several priority research directions
+          and has broader implications requiring concerted effort from interdisciplinary groups.
+        </p>
 
-        <!-- Research Priorities -->
-        <h3 class="subsection-title">🔬 Research Priorities</h3>
+        <!-- Research Directions -->
+        <h3 class="subsection-title" style="margin-top: 24px;">🔬 Research Directions</h3>
         <div class="action-grid">
           <div class="action-card">
             <div class="action-header">
               <div class="action-icon">🧭</div>
-              <h3>System-level attribution</h3>
+              <h3>System-Level Attribution</h3>
             </div>
-            <ul class="bullets">
-              <li>Trace plans, memory reads/writes, tool calls, and delegation across time.</li>
-              <li>Assign responsibility within multi-component systems.</li>
-            </ul>
+            <p class="card-body-text">
+              Current interpretability methods attribute outputs to model internals, but agentic outcomes emerge from
+              multi-step trajectories spanning planning, memory, tool use, and delegation. New attribution methods are
+              needed that track how decisions propagate across components over time, including formal causal frameworks
+              for responsibility assignment in multi-component systems and techniques for reconstructing decision paths
+              under partial observability.
+            </p>
           </div>
 
           <div class="action-card">
             <div class="action-header">
               <div class="action-icon">📈</div>
-              <h3>Scalable runtime interpretability</h3>
+              <h3>Scalable Runtime Monitoring</h3>
             </div>
-            <ul class="bullets">
-              <li>Continuous lightweight monitoring.</li>
-              <li>Risk-aware escalation to deeper analysis when anomalies occur.</li>
-            </ul>
+            <p class="card-body-text">
+              Mechanistic analysis remains computationally prohibitive for continuous deployment. Lightweight alternatives
+              are needed, such as multi-resolution observability that logs coarse artifacts continuously while reserving
+              expensive analysis for flagged episodes, minimal sufficient statistics for drift detection, and selective
+              activation strategies that trigger deeper interpretability only when risk thresholds are exceeded.
+            </p>
           </div>
 
           <div class="action-card">
             <div class="action-header">
               <div class="action-icon">🧪</div>
-              <h3>Benchmarks & infrastructure</h3>
+              <h3>Benchmarks &amp; Evaluation</h3>
             </div>
-            <ul class="bullets">
-              <li>Trajectory datasets + logging schemas.</li>
-              <li>Multi-agent evaluation protocols.</li>
-            </ul>
+            <p class="card-body-text">
+              There is a lack of standardized resources for evaluating system-centric interpretability. Progress requires
+              shared benchmarks capturing agentic phenomena (coordination failures, goal drift, emergent behaviors),
+              common logging schemas, trajectory datasets with ground-truth failure annotations, and evaluation protocols
+              for multi-agent settings.
+            </p>
           </div>
         </div>
 
@@ -391,14 +402,24 @@
         <div class="action-grid">
           <div class="action-card impl-card">
             <div class="action-header">
+              <div class="action-icon">🔬</div>
+              <h3>For Researchers</h3>
+            </div>
+            <p class="card-body-text">
+              Formalize this stack as a modular research object to test methods across orchestration and memory layers,
+              publish reproducible reference architectures, and log standards.
+            </p>
+          </div>
+
+          <div class="action-card impl-card">
+            <div class="action-header">
               <div class="action-icon">👩‍💻</div>
               <h3>For Practitioners</h3>
             </div>
-            <ul class="bullets">
-              <li>Adopt layered monitoring from day one—not as an afterthought.</li>
-              <li>Design agent architectures with interpretability hooks at each component.</li>
-              <li>Establish incident response workflows that leverage trajectory logs.</li>
-            </ul>
+            <p class="card-body-text">
+              Build traceability instrumentation at each module boundary to clarify why specific plans or tool actions occur.
+              This supports guardrail implementation around tool use under uncertainty.
+            </p>
           </div>
 
           <div class="action-card impl-card">
@@ -406,11 +427,11 @@
               <div class="action-icon">⚖️</div>
               <h3>For Regulators</h3>
             </div>
-            <ul class="bullets">
-              <li>Require system-level audit trails, not just model cards.</li>
-              <li>Define accountability standards for multi-agent deployments.</li>
-              <li>Mandate human-in-the-loop escalation for high-stakes decisions.</li>
-            </ul>
+            <p class="card-body-text">
+              Shift compliance standards to require system-level evidence, such as mandating tracing requirements, full
+              lifecycle monitoring plans, and decision provenance as part of approval or procurement processes, rather
+              than relying solely on model performance metrics.
+            </p>
           </div>
 
           <div class="action-card impl-card">
@@ -418,11 +439,23 @@
               <div class="action-icon">🏢</div>
               <h3>For Organizations</h3>
             </div>
-            <ul class="bullets">
-              <li>Invest in interpretability infrastructure alongside capability development.</li>
-              <li>Build cross-functional teams spanning ML, systems, and domain expertise.</li>
-              <li>Treat post-incident learning as a continuous improvement process.</li>
-            </ul>
+            <p class="card-body-text">
+              Perceive agentic systems as continuously governed entities, adopting layered auditing and incident response
+              loops as core acceptance criteria. Encourage shared learning mechanisms, such as standardized incident
+              taxonomies, to encourage proactive interpretability integration within deployed agentic systems and earlier
+              disclosures of failures.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 28px;">
+          <div class="callout-icon">🤝</div>
+          <div>
+            <p>
+              Closing this gap requires a coordinated effort to standardize reporting mechanisms and organizational change
+              management practices that accommodate the non-linear complexity of multi-agent systems. Governance frameworks
+              may require system-level evidence rather than relying solely on model performance metrics.
+            </p>
           </div>
         </div>
       </div>
