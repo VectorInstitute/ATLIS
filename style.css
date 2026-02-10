@@ -557,7 +557,7 @@ figcaption{
 /* Intro Flow Diagram */
 .intro-flow {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 32px 1fr;
   align-items: stretch;
   gap: 0;
   margin-top: 24px;
@@ -567,12 +567,12 @@ figcaption{
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 16px;
+  padding: 24px 22px;
   box-shadow: var(--shadow);
   border-top: 3px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .intro-problem { border-top-color: #ef4444; }
@@ -586,24 +586,24 @@ figcaption{
 
 .intro-flow-label {
   font-weight: 900;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--ink);
 }
 
 .intro-flow-text {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .intro-flow-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 900;
   color: var(--subtle);
-  padding: 0 6px;
+  padding: 0;
 }
 
 @media (max-width: 800px) {
