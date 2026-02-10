@@ -280,111 +280,66 @@
           activate across the lifecycle to detect, trace, and resolve the referral timing divergence.
         </p>
 
-        <div class="usecase-content">
-          <!-- Failure & Solution Text -->
-          <div class="usecase-text">
-            <div class="usecase-block">
-              <h3>🔴 The Divergence</h3>
-              <p>
-                Despite identical referral criteria and subagent architectural components, the lung site deployment begins referring patients
-                <strong>later</strong> than the GI site deployment for matched risk profiles. In one system, short-term symptoms improvement
-                stored in memory delays escalation; in the other, accumulated hospitalizations trigger earlier referral. The divergence
-                emerges only over time, due to differences in how longitudinal evidence is stored and propagated through monitoring and planning.
-              </p>
-            </div>
-
-            <div class="usecase-block">
-              <h3>🟢 How ATLIS Surfaces the Divergence</h3>
-              <p>
-                ATLIS surfaces this drift before it causes harm at <strong>Layer 1</strong> flagging a systematic delay in lung referrals
-                relative to GI for comparable patients. It then traces the root cause through <strong>Layers 2–4</strong> using inter-agent
-                coordination signals and mechanistic differences. This pinpoints the divergence to differences in memory weighting and
-                inter-agent handoff dynamics.
-              </p>
-              <p>
-                <strong>Layer 3</strong> maps these differences in symptom versus hospitalization weighting to divergent clinical reasoning
-                pathways, while <strong>Layer 5</strong> evaluates whether referral timing remains within prescribed safety bounds and
-                escalates borderline cases for human-in-the-loop clinician review.
-              </p>
-              <p>
-                Because ATLIS is embedded across the deployment lifecycle, these findings feed back into updated simulations (pre-deployment),
-                refined runtime baselines (operations), and recalibrated orchestration policies (post-incident learning), enabling continuous
-                system correction rather than one-time diagnosis.
-              </p>
-            </div>
-
-            <div class="usecase-block">
-              <h3>⚠️ Why Model-Centric Methods Would Fail Here</h3>
-              <p>
-                Model-centric interpretability would likely miss this failure. Feature attribution methods (e.g., SHAP or Integrated Gradients)
-                explain individual predictions, but the divergence arises from longitudinal interactions between monitoring, memory, planning,
-                and referral timing. Chain-of-thought inspection or single-agent circuit analysis may appear locally consistent, while the true
-                cause lies upstream in memory updates and cross-agent handoff dynamics. Without behavioral drift baselines and coordination-level
-                analysis, the system-level mechanism would remain hidden.
-              </p>
-            </div>
+        <div class="usecase-blocks">
+          <div class="usecase-block">
+            <h3>🔴 The Divergence</h3>
+            <p>
+              Despite identical referral criteria and subagent architectural components, the lung site deployment begins referring patients
+              <strong>later</strong> than the GI site deployment for matched risk profiles. In one system, short-term symptoms improvement
+              stored in memory delays escalation; in the other, accumulated hospitalizations trigger earlier referral. The divergence
+              emerges only over time, due to differences in how longitudinal evidence is stored and propagated through monitoring and planning.
+            </p>
           </div>
 
-          <!-- Cyclical Diagram -->
-          <div class="usecase-diagram">
-            <div class="layer-cycle">
-              <div class="cycle-title">ATLIS Layers Applied</div>
-              <div class="cycle-ring">
-                <div class="layer-node layer-1" data-layer="1">
-                  <span class="layer-num">1</span>
-                  <span class="layer-name">Behavioral Monitoring</span>
-                  <span class="layer-desc">Flag referral delays</span>
-                </div>
-                <div class="layer-connector c1-2">→</div>
-                <div class="layer-node layer-2" data-layer="2">
-                  <span class="layer-num">2</span>
-                  <span class="layer-name">Mechanistic Analysis</span>
-                  <span class="layer-desc">Trace internal circuits</span>
-                </div>
-                <div class="layer-connector c2-3">→</div>
-                <div class="layer-node layer-3" data-layer="3">
-                  <span class="layer-num">3</span>
-                  <span class="layer-name">Abstraction Bridging</span>
-                  <span class="layer-desc">Map reasoning pathways</span>
-                </div>
-                <div class="layer-connector c3-4">→</div>
-                <div class="layer-node layer-4" data-layer="4">
-                  <span class="layer-num">4</span>
-                  <span class="layer-name">Multi-Agent Analysis</span>
-                  <span class="layer-desc">Analyze coordination</span>
-                </div>
-                <div class="layer-connector c4-5">→</div>
-                <div class="layer-node layer-5" data-layer="5">
-                  <span class="layer-num">5</span>
-                  <span class="layer-name">Safety & Alignment</span>
-                  <span class="layer-desc">Validate & escalate</span>
-                </div>
-              </div>
-              <div class="cycle-feedback">
-                <span class="feedback-arrow">↺</span>
-                <span class="feedback-text">Continuous feedback loop across lifecycle stages</span>
-              </div>
-            </div>
-
-            <!-- Illustrative Figure -->
-            <div class="figure-grid" style="margin-top: 20px;">
-              <figure class="figure-card">
-                <a class="figure-link" href="assets/Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">
-                  <img
-                    src="assets/Illustrative%20Example%20Diagram_page-0001.jpg"
-                    alt="Illustrative Case Study Diagram"
-                    onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
-                </a>
-                <figcaption>
-                  <strong>Figure 2.</strong> Illustrative example of using ATLIS for a clinical palliative care referral workflow.
-                  <span class="nowrap"><a href="assets/Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">Open PDF</a></span>
-                  <div class="img-fallback">
-                    Couldn't load <code>assets/Illustrative Example Diagram_page-0001.jpg</code>. Check spaces + capitalization.
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
+          <div class="usecase-block">
+            <h3>🟢 How ATLIS Surfaces the Divergence</h3>
+            <p>
+              ATLIS surfaces this drift before it causes harm at <strong>Layer 1</strong> flagging a systematic delay in lung referrals
+              relative to GI for comparable patients. It then traces the root cause through <strong>Layers 2–4</strong> using inter-agent
+              coordination signals and mechanistic differences. This pinpoints the divergence to differences in memory weighting and
+              inter-agent handoff dynamics.
+            </p>
+            <p>
+              <strong>Layer 3</strong> maps these differences in symptom versus hospitalization weighting to divergent clinical reasoning
+              pathways, while <strong>Layer 5</strong> evaluates whether referral timing remains within prescribed safety bounds and
+              escalates borderline cases for human-in-the-loop clinician review.
+            </p>
+            <p>
+              Because ATLIS is embedded across the deployment lifecycle, these findings feed back into updated simulations (pre-deployment),
+              refined runtime baselines (operations), and recalibrated orchestration policies (post-incident learning), enabling continuous
+              system correction rather than one-time diagnosis.
+            </p>
           </div>
+
+          <div class="usecase-block">
+            <h3>⚠️ Why Model-Centric Methods Would Fail Here</h3>
+            <p>
+              Model-centric interpretability would likely miss this failure. Feature attribution methods (e.g., SHAP or Integrated Gradients)
+              explain individual predictions, but the divergence arises from longitudinal interactions between monitoring, memory, planning,
+              and referral timing. Chain-of-thought inspection or single-agent circuit analysis may appear locally consistent, while the true
+              cause lies upstream in memory updates and cross-agent handoff dynamics. Without behavioral drift baselines and coordination-level
+              analysis, the system-level mechanism would remain hidden.
+            </p>
+          </div>
+        </div>
+
+        <!-- Illustrative Figure -->
+        <div class="figure-grid" style="margin-top: 28px;">
+          <figure class="figure-card figure-large">
+            <a class="figure-link" href="assets/Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">
+              <img
+                src="assets/Illustrative%20Example%20Diagram_page-0001.jpg"
+                alt="Illustrative Case Study Diagram"
+                onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
+            </a>
+            <figcaption>
+              <strong>Figure 2.</strong> This is an example of implementing ATLIS for healthcare referrals. Two agentic systems, with identical architectures and referral criteria, begin producing different referral timing for patients with comparable risk profiles. This divergence emerges from how accumulated hospitalizations trigger earlier referral in one system.
+              <span class="nowrap"><a href="assets/Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">Open PDF</a></span>
+              <div class="img-fallback">
+                Couldn't load <code>assets/Illustrative Example Diagram_page-0001.jpg</code>. Check spaces + capitalization.
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
