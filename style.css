@@ -554,6 +554,76 @@ figcaption{
   font-weight: 600;
 }
 
+/* Alternate Views */
+.alt-views-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 800px) {
+  .alt-views-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.alt-view-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.alt-view-objection {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.alt-view-objection p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.alt-view-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+
+.alt-view-label {
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.alt-view-response {
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #fff 100%);
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.alt-view-response strong {
+  color: #16a34a;
+}
+
 /* Intro Flow Diagram */
 .intro-flow {
   display: grid;
