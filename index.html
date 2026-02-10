@@ -56,10 +56,7 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-center">
-          <div class="pill">Transparent AI Paper</div>
-
           <h1>
-            <span class="hero-accent">Position</span>:
             Accountable Deployment of Agentic AI Demands Layered, System-Level Interpretability
           </h1>
 
@@ -81,50 +78,6 @@
           </p>
         </div>
 
-        <!-- SUMMARY CARDS (edit text as you like) -->
-        <div class="hero-cards-row" aria-label="Key highlights">
-          <div class="card">
-            <div class="card-h">Why model-centric breaks</div>
-            <div class="card-b">
-              Agentic failures emerge from trajectories: planning, tool use, memory updates, and multi-agent coordination over time.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-h">ATLIS = layered stack</div>
-            <div class="card-b">
-              Behavioral monitoring → mechanistic circuits → abstraction bridging → multi-agent analysis → safety & alignment oversight.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-h">Lifecycle integration</div>
-            <div class="card-b">
-              Pre-deployment baselines, runtime monitoring, incident response, and post-incident learning—connected by feedback loops.
-            </div>
-          </div>
-        </div>
-
-        <div class="callout callout-position">
-          <div class="callout-icon">💡</div>
-          <div>
-            <div class="callout-title">Position</div>
-            <p>
-              Interpretability for agentic AI must become <strong>system-centric</strong>:
-              explain trajectories, responsibility assignment, and lifecycle dynamics—not only model internals.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEASER (optional; you can delete) -->
-    <section class="section">
-      <div class="wrap">
-        <p class="lead">
-          <strong>Agentic AI systems</strong> extend LLMs with planning, tool use, memory, and multi-step control loops.
-          ATLIS proposes interpretability that explains system behavior over time—not just token-level mechanisms.
-        </p>
       </div>
     </section>
 
@@ -133,15 +86,18 @@
       <div class="wrap">
         <h2>Abstract</h2>
         <p class="lead">
-          Agentic AI systems extend large language models with planning, tool use, memory, and multi-step control loops, shifting deployment
-          from a single predictive model to a behavior-producing system. We argue interpretability has not made this accompanying shift:
-          prevailing methods remain model-centric, explaining isolated outputs rather than diagnosing long-horizon plans, tool-mediated actions,
-          and multi-agent coordination. This gap limits auditability and accountability because failures emerge from interactions among planning,
-          memory updates, delegation, and environmental feedback.
-          <strong>We advance the position that interpretability for agentic AI must be system-centric, focusing on trajectories,
-          responsibility assignment, and lifecycle dynamics, not only internal model mechanisms.</strong>
-          To operationalize this view, we propose the Agentic Trajectory and Layered Interpretability Stack (ATLIS), spanning real-time behavioral
-          monitoring, mechanistic analysis, abstraction bridging, multi-agent coordination analysis, and safety and alignment oversight.
+          Agentic AI systems behave through trajectories: they plan, invoke tools, update memory, and coordinate over multiple steps.
+          However, interpretability remains largely model-centric, focused on explaining single predictions rather than tracing
+          long-horizon behavior and responsibility across interacting components. As a result, critical failures, such as tool misuse,
+          coordination breakdowns, or goal drift, often evade existing audits until harm occurs.
+          <strong>We argue that interpretability for agentic systems must become system-centric, addressing trajectories, responsibility
+          assignment, and lifecycle dynamics rather than internal model mechanisms alone.</strong>
+          We advance three claims: interpretability must (1) co-evolve with agentic capabilities, (2) address distinct layers of opacity
+          with tailored methods, and (3) integrate across the deployment lifecycle. To operationalize this position, we introduce
+          <strong>ATLIS (Agentic Trajectory and Layered Interpretability Stack)</strong>, a framework integrating five interpretability
+          layers across a five-stage deployment lifecycle. ATLIS enables lightweight continuous monitoring with risk-aware escalation
+          to deeper system-level analysis when incidents are detected. ATLIS provides a blueprint for closing the growing gap between
+          agentic capabilities and the interpretability infrastructure needed to govern them.
         </p>
       </div>
     </section>
