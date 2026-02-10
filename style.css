@@ -335,11 +335,6 @@ h3{
   padding: 16px;
 }
 
-.figure-large img {
-  max-height: none;
-  padding: 16px;
-}
-
 figcaption{
   padding:14px 16px;
   color:var(--muted);
