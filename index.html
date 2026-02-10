@@ -247,6 +247,24 @@
           (Agentic Trajectory and Layered Interpretability Stack)—a comprehensive framework spanning five interpretability layers
           across the entire agent deployment lifecycle.
         </p>
+
+        <div class="figure-grid" style="margin-top: 24px;">
+          <figure class="figure-card figure-large">
+            <a class="figure-link" href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">
+              <img
+                src="assets/ATLIS-framework_page-0001.jpg"
+                alt="ATLIS Framework Overview"
+                onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
+            </a>
+            <figcaption>
+              <strong>Figure 1.</strong> ATLIS (Agentic Trajectory &amp; Layered Interpretability Stack) is a deployment lifecycle and integrated interpretability stack for agentic systems. This framework integrates five interpretability layers across the agentic system lifecycle: (1) Real-Time Behavioral Monitoring tracks observable agent actions; (2) Mechanistic Circuit Analysis examines internal model representations; (3) Abstraction-Level Bridging connects low-level circuits to high-level reasoning; (4) Multi-Agent Analysis evaluates coordination dynamics; and (5) Safety and Alignment ensures adherence to predefined objectives. The framework incorporates two loops: blue arrows denote the monitoring refinement feedback loop, while orange arrows denote the safety and alignment revision loop. Computational overhead ranges from low (Layer 1 continuous monitoring) to high (Layer 2 full circuit extraction during incident response).
+              <span class="nowrap"><a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">Open PDF</a></span>
+              <div class="img-fallback">
+                Couldn't load <code>assets/ATLIS-framework_page-0001.jpg</code>. Check filename + capitalization.
+              </div>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -257,216 +275,4 @@
         <p class="muted">Click a figure to open the PDF in a new tab.</p>
 
         <div class="figure-grid">
-          <figure class="figure-card">
-            <a class="figure-link" href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">
-              <img
-                src="assets/ATLIS-framework_page-0001.jpg"
-                alt="ATLIS Framework Overview"
-                onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
-            </a>
-            <figcaption>
-              <strong>ATLIS Framework Overview.</strong>
-              ATLIS integrates five interpretability layers across the agent deployment lifecycle, with monitoring refinement and safety/alignment revision loops.
-              <span class="nowrap"><a href="assets/ATLIS-framework.pdf" target="_blank" rel="noopener">Open PDF</a></span>
-              <div class="img-fallback">
-                Couldn’t load <code>assets/ATLIS-framework_page-0001.jpg</code>. Check filename + capitalization.
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="figure-card">
-            <a class="figure-link" href="assets/Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">
-              <img
-                src="assets/Illustrative%20Example%20Diagram_page-0001.jpg"
-                alt="Illustrative Case Study Diagram"
-                onerror="this.onerror=null; this.closest('figure').classList.add('img-error'); this.style.display='none';">
-            </a>
-            <figcaption>
-              <strong>Illustrative Case Study.</strong>
-              Illustrative example of using ATLIS for a clinical workflow.
-              <span class="nowrap"><a href="assets/Illustrative%20Example%20Diagram.pdf" target="_blank" rel="noopener">Open PDF</a></span>
-              <div class="img-fallback">
-                Couldn’t load <code>assets/Illustrative%20Example%20Diagram_page-0001.jpg</code>. Check spaces + capitalization.
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- USE CASE -->
-    <section id="usecase" class="section">
-      <div class="wrap">
-        <h2>Use Case: Palliative Care Referral</h2>
-        
-        <div class="usecase-content">
-          <!-- Failure & Solution Text -->
-          <div class="usecase-text">
-            <div class="usecase-block">
-              <h3>🔴 The Concrete Failure</h3>
-              <p>
-                Consider a hospital deploying an agentic system for palliative care referral across two disease sites: lung and gastrointestinal (GI) cancer. 
-                Despite identical referral criteria and subagent components, the lung site begins referring patients <strong>later</strong> than GI for matched risk profiles.
-              </p>
-              <p>
-                In one system, short-term symptom improvement stored in memory delays escalation; in the other, accumulated hospitalizations trigger earlier referral. 
-                The divergence emerges only over time, due to differences in how longitudinal evidence is stored and propagated through monitoring and planning.
-              </p>
-              <p class="muted" style="font-style:italic;">
-                <strong>Why model-centric methods fail:</strong> Feature attribution (SHAP, Integrated Gradients) explains individual predictions, but the divergence arises from longitudinal interactions between monitoring, memory, planning, and referral timing.
-              </p>
-            </div>
-
-            <div class="usecase-block">
-              <h3>🟢 How ATLIS Surfaces the Divergence</h3>
-              <p>
-                ATLIS surfaces this drift <strong>before</strong> it causes harm. <strong>Layer 1</strong> flags a systematic delay in lung referrals relative to GI for comparable patients.
-                It then traces the root cause through <strong>Layers 2–4</strong> using inter-agent coordination signals and mechanistic differences.
-              </p>
-              <p>
-                <strong>Layer 3</strong> maps differences in symptom vs. hospitalization weighting to divergent clinical reasoning pathways, while <strong>Layer 5</strong> evaluates whether referral timing remains within prescribed safety bounds and escalates borderline cases for human-in-the-loop clinician review.
-              </p>
-              <p>
-                Because ATLIS is embedded across the deployment lifecycle, findings feed back into updated simulations (pre-deployment), refined runtime baselines (operations), and recalibrated orchestration policies (post-incident learning).
-              </p>
-            </div>
-          </div>
-
-          <!-- Cyclical Diagram -->
-          <div class="usecase-diagram">
-            <div class="layer-cycle">
-              <div class="cycle-title">ATLIS Layers Applied</div>
-              <div class="cycle-ring">
-                <div class="layer-node layer-1" data-layer="1">
-                  <span class="layer-num">1</span>
-                  <span class="layer-name">Behavioral Monitoring</span>
-                  <span class="layer-desc">Flag referral delays</span>
-                </div>
-                <div class="layer-connector c1-2">→</div>
-                <div class="layer-node layer-2" data-layer="2">
-                  <span class="layer-num">2</span>
-                  <span class="layer-name">Mechanistic Analysis</span>
-                  <span class="layer-desc">Trace internal circuits</span>
-                </div>
-                <div class="layer-connector c2-3">→</div>
-                <div class="layer-node layer-3" data-layer="3">
-                  <span class="layer-num">3</span>
-                  <span class="layer-name">Abstraction Bridging</span>
-                  <span class="layer-desc">Map reasoning pathways</span>
-                </div>
-                <div class="layer-connector c3-4">→</div>
-                <div class="layer-node layer-4" data-layer="4">
-                  <span class="layer-num">4</span>
-                  <span class="layer-name">Multi-Agent Analysis</span>
-                  <span class="layer-desc">Analyze coordination</span>
-                </div>
-                <div class="layer-connector c4-5">→</div>
-                <div class="layer-node layer-5" data-layer="5">
-                  <span class="layer-num">5</span>
-                  <span class="layer-name">Safety & Alignment</span>
-                  <span class="layer-desc">Validate & escalate</span>
-                </div>
-              </div>
-              <div class="cycle-feedback">
-                <span class="feedback-arrow">↺</span>
-                <span class="feedback-text">Continuous feedback loop across lifecycle stages</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CALL TO ACTION AND IMPLEMENTATION PLAN -->
-    <section id="cta" class="section alt">
-      <div class="wrap">
-        <h2>Call to Action and Implementation Plan</h2>
-
-        <!-- Research Priorities -->
-        <h3 class="subsection-title">🔬 Research Priorities</h3>
-        <div class="action-grid">
-          <div class="action-card">
-            <div class="action-header">
-              <div class="action-icon">🧭</div>
-              <h3>System-level attribution</h3>
-            </div>
-            <ul class="bullets">
-              <li>Trace plans, memory reads/writes, tool calls, and delegation across time.</li>
-              <li>Assign responsibility within multi-component systems.</li>
-            </ul>
-          </div>
-
-          <div class="action-card">
-            <div class="action-header">
-              <div class="action-icon">📈</div>
-              <h3>Scalable runtime interpretability</h3>
-            </div>
-            <ul class="bullets">
-              <li>Continuous lightweight monitoring.</li>
-              <li>Risk-aware escalation to deeper analysis when anomalies occur.</li>
-            </ul>
-          </div>
-
-          <div class="action-card">
-            <div class="action-header">
-              <div class="action-icon">🧪</div>
-              <h3>Benchmarks & infrastructure</h3>
-            </div>
-            <ul class="bullets">
-              <li>Trajectory datasets + logging schemas.</li>
-              <li>Multi-agent evaluation protocols.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Broader Implications -->
-        <h3 class="subsection-title" style="margin-top: 36px;">🌐 Broader Implications</h3>
-        <div class="action-grid">
-          <div class="action-card impl-card">
-            <div class="action-header">
-              <div class="action-icon">👩‍💻</div>
-              <h3>For Practitioners</h3>
-            </div>
-            <ul class="bullets">
-              <li>Adopt layered monitoring from day one—not as an afterthought.</li>
-              <li>Design agent architectures with interpretability hooks at each component.</li>
-              <li>Establish incident response workflows that leverage trajectory logs.</li>
-            </ul>
-          </div>
-
-          <div class="action-card impl-card">
-            <div class="action-header">
-              <div class="action-icon">⚖️</div>
-              <h3>For Regulators</h3>
-            </div>
-            <ul class="bullets">
-              <li>Require system-level audit trails, not just model cards.</li>
-              <li>Define accountability standards for multi-agent deployments.</li>
-              <li>Mandate human-in-the-loop escalation for high-stakes decisions.</li>
-            </ul>
-          </div>
-
-          <div class="action-card impl-card">
-            <div class="action-header">
-              <div class="action-icon">🏢</div>
-              <h3>For Organizations</h3>
-            </div>
-            <ul class="bullets">
-              <li>Invest in interpretability infrastructure alongside capability development.</li>
-              <li>Build cross-functional teams spanning ML, systems, and domain expertise.</li>
-              <li>Treat post-incident learning as a continuous improvement process.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="wrap footer-inner">
-      </div>
-    </footer>
-  </main>
-
-  <script src="./main.js"></script>
-</body>
-</html>
+          
