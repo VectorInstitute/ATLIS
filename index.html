@@ -98,33 +98,11 @@
         </div>
 
       </div>
-    </section>
 
-    <!-- ABSTRACT -->
-    <section id="abstract" class="section alt">
+      <!-- INTRODUCTION -->
+    <!-- <section id="introduction" class="section"> -->
       <div class="wrap">
-        <h2>Abstract</h2>
-        <p class="lead">
-          Agentic AI systems behave through trajectories: they plan, invoke tools, update memory, and coordinate over multiple steps.
-          However, interpretability remains largely model-centric, focused on explaining single predictions rather than tracing
-          long-horizon behavior and responsibility across interacting components. As a result, critical failures, such as tool misuse,
-          coordination breakdowns, or goal drift, often evade existing audits until harm occurs.
-          <strong>We argue that interpretability for agentic systems must become system-centric, addressing trajectories, responsibility
-          assignment, and lifecycle dynamics rather than internal model mechanisms alone.</strong>
-          We advance three claims: interpretability must (1) co-evolve with agentic capabilities, (2) address distinct layers of opacity
-          with tailored methods, and (3) integrate across the deployment lifecycle. To operationalize this position, we introduce
-          <strong>ATLIS (Agentic Trajectory and Layered Interpretability Stack)</strong>, a framework integrating five interpretability
-          layers across a five-stage deployment lifecycle. ATLIS enables lightweight continuous monitoring with risk-aware escalation
-          to deeper system-level analysis when incidents are detected. ATLIS provides a blueprint for closing the growing gap between
-          agentic capabilities and the interpretability infrastructure needed to govern them.
-        </p>
-      </div>
-    </section>
-
-    <!-- INTRODUCTION -->
-    <section id="introduction" class="section">
-      <div class="wrap">
-        <h2>Introduction</h2>
+        <!-- <h2>Introduction</h2> -->
         <p class="lead">
           When an agentic system fails, who is accountable and how do we determine why? Unlike static models that produce isolated predictions,
           agentic systems plan, use tools, maintain memory, and coordinate actions over time. Failures may arise not only from incorrect outputs,
@@ -154,6 +132,61 @@
         </div>
       </div>
     </section>
+
+    <!-- ABSTRACT -->
+    <section id="abstract" class="section alt">
+      <div class="wrap">
+        <h2>Abstract</h2>
+        <p class="lead">
+          Agentic AI systems behave through trajectories: they plan, invoke tools, update memory, and coordinate over multiple steps.
+          However, interpretability remains largely model-centric, focused on explaining single predictions rather than tracing
+          long-horizon behavior and responsibility across interacting components. As a result, critical failures, such as tool misuse,
+          coordination breakdowns, or goal drift, often evade existing audits until harm occurs.
+          <strong>We argue that interpretability for agentic systems must become system-centric, addressing trajectories, responsibility
+          assignment, and lifecycle dynamics rather than internal model mechanisms alone.</strong>
+          We advance three claims: interpretability must (1) co-evolve with agentic capabilities, (2) address distinct layers of opacity
+          with tailored methods, and (3) integrate across the deployment lifecycle. To operationalize this position, we introduce
+          <strong>ATLIS (Agentic Trajectory and Layered Interpretability Stack)</strong>, a framework integrating five interpretability
+          layers across a five-stage deployment lifecycle. ATLIS enables lightweight continuous monitoring with risk-aware escalation
+          to deeper system-level analysis when incidents are detected. ATLIS provides a blueprint for closing the growing gap between
+          agentic capabilities and the interpretability infrastructure needed to govern them.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <!-- <section id="introduction" class="section">
+      <div class="wrap">
+        <h2>Introduction</h2>
+        <p class="lead">
+          When an agentic system fails, who is accountable and how do we determine why? Unlike static models that produce isolated predictions,
+          agentic systems plan, use tools, maintain memory, and coordinate actions over time. Failures may arise not only from incorrect outputs,
+          but from evolving internal state and errors across components that are difficult to trace.
+        </p> -->
+
+        <!-- Visual: Problem → Gap → Position -->
+        <!-- <div class="intro-flow">
+          <div class="intro-flow-card intro-problem">
+            <div class="intro-flow-icon">⚠️</div>
+            <div class="intro-flow-label">Real-World Failures</div>
+            <div class="intro-flow-text">
+              Semi-autonomous driving incidents spanning perception, planning, and human-machine handoff.
+              A NYC chatbot advising employers to take workers' tips, violating local law.
+              Root causes: inadequate constraint enforcement, poor grounding, absent lifecycle oversight.
+            </div>
+          </div>
+          <div class="intro-flow-arrow">→</div>
+          <div class="intro-flow-card intro-gap">
+            <div class="intro-flow-icon">🔍</div>
+            <div class="intro-flow-label">The Interpretability Gap</div>
+            <div class="intro-flow-text">
+              Model-centric methods (feature attributions, saliency maps, circuit analysis) explain individual outputs—not
+              how decisions emerge from interactions across multiple components over time.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
     <!-- POSITION STATEMENT AND ALTERNATIVE VIEWS -->
     <section id="position" class="section alt">
