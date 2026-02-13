@@ -172,22 +172,21 @@
           <div class="card">
             <div class="card-h">Claim 1: Coevolution over reaction</div>
             <div class="card-b">
-              Interpretability methods must co-develop alongside agentic capabilities, not be retrofitted post-deployment.
+              Agentic systems change quickly as teams add new tools, memory designs, and orchestration. Their failure modes change with them. If interpretability is added only after deployment, teams often realize too late that they did not collect the right logs or traces to reconstruct what happened. Coevolution means designing agents so that plans, tool calls, and memory updates are recorded and reviewable from the start, and improving that instrumentation as the system evolves.
             </div>
           </div>
 
           <div class="card">
             <div class="card-h">Claim 2: Layered decomposition</div>
             <div class="card-b">
-              Agentic opacity occurs at distinct layers (e.g., behavioral patterns, internal circuits, abstraction mappings, 
-              multi-agent coordination, and safety constraints). Transparency requires tailored and layered analysis.
+              Agentic failures rarely have a single cause. A bad outcome can result from behavioral drift, misleading internal representations, incorrect tool selection, coordination breakdowns between agents, or unmet safety constraints, and these factors often interact. A layered approach makes investigation manageable. It clarifies where to look first, what evidence to collect at each level, and how to connect evidence across levels so that explanations are grounded in traceable system behavior.
             </div>
           </div>
 
           <div class="card">
             <div class="card-h">Claim 3: Lifecycle integration</div>
             <div class="card-b">
-              Interpretability must be applied throughout the full agent deployment lifecycle, rather than as a one-time audit.
+              Interpretability is not a one time report. It is an operational requirement across the full lifecycle. It is needed to establish expected behavior before launch, monitor drift during runtime, support incident response when failures occur, and feed lessons back into testing and governance. Lifecycle integration ensures interpretability supports accountability in practice, not only after harm but also through ongoing prevention and improvement.
             </div>
           </div>
         </div>
