@@ -142,16 +142,64 @@
           However, interpretability remains largely model-centric, focused on explaining single predictions rather than tracing
           long-horizon behavior and responsibility across interacting components. As a result, critical failures, such as tool misuse,
           coordination breakdowns, or goal drift, often evade existing audits until harm occurs.
-          <strong>We argue that interpretability for agentic systems must become system-centric, addressing trajectories, responsibility
+          <!-- <strong>We argue that interpretability for agentic systems must become system-centric, addressing trajectories, responsibility
           assignment, and lifecycle dynamics rather than internal model mechanisms alone.</strong>
           We advance three claims: interpretability must (1) co-evolve with agentic capabilities, (2) address distinct layers of opacity
           with tailored methods, and (3) integrate across the deployment lifecycle. To operationalize this position, we introduce
           <strong>ATLIS (Agentic Trajectory and Layered Interpretability Stack)</strong>, a framework integrating five interpretability
           layers across a five-stage deployment lifecycle. ATLIS enables lightweight continuous monitoring with risk-aware escalation
           to deeper system-level analysis when incidents are detected. ATLIS provides a blueprint for closing the growing gap between
-          agentic capabilities and the interpretability infrastructure needed to govern them.
+          agentic capabilities and the interpretability infrastructure needed to govern them. -->
         </p>
       </div>
+      
+      <div class="callout callout-position">
+          <div class="callout-icon">🎯</div>
+          <div>
+            <div class="callout-title">Position</div>
+            <p>
+              The interpretability field is solving the wrong problem for the agentic era. Current methods explain how individual models
+              compute outputs but cannot explain why an agent selected a particular plan, how multi-agent coordination failed, or where
+              accountability lies within a system. We argue three points: (1) interpretability methods must co-evolve with agentic capabilities
+              rather than follow them, embedding transparency into planning, tool use, and memory from the outset; (2) agentic opacity occurs
+              at distinct layers such as behavioral, mechanistic, coordination, and safety, each requiring tailored methods; and
+              (3) interpretability must integrate across the full agent development lifecycle rather than serve as a one-time audit.
+            </p>
+          </div>
+        </div>
+        
+        <div class="three-col" style="margin-top: 20px;">
+          <div class="card">
+            <div class="card-h">Claim 1: Coevolution over reaction</div>
+            <div class="card-b">
+              Interpretability methods must co-develop alongside agentic capabilities, not be retrofitted post-deployment.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h">Claim 2: Layered decomposition</div>
+            <div class="card-b">
+              Agentic opacity occurs at distinct layers (e.g., behavioral patterns, internal circuits, abstraction mappings, 
+              multi-agent coordination, and safety constraints). Transparency requires tailored and layered analysis.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h">Claim 3: Lifecycle integration</div>
+            <div class="card-b">
+              Interpretability must be applied throughout the full agent deployment lifecycle, rather than as a one-time audit.
+            </div>
+          </div>
+        </div>
+       </div>
+
+      <div class="wrap">
+        <p class="lead">
+          To operationalize this position, we introduce <strong>ATLIS (Agentic Trajectory and Layered Interpretability Stack)</strong>, a framework integrating five interpretability
+          layers across a five-stage deployment lifecycle. ATLIS enables lightweight continuous monitoring with risk-aware escalation
+          to deeper system-level analysis when incidents are detected. ATLIS provides a blueprint for closing the growing gap between
+          agentic capabilities and the interpretability infrastructure needed to govern them.
+        </p>
     </section>
 
     <!-- INTRODUCTION -->
