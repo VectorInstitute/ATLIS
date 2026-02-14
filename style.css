@@ -77,10 +77,17 @@ a:hover{ text-decoration:underline; }
 }
 
 .brand-logo{
-  height: 80px;
+  height: 90px;
   width: auto;
   display:block;
   opacity: 0.95;
+}
+
+.paper-logo{
+  height: 95px;
+  width: auto;
+  display:block;
+  opacity: 0.95
 }
 
 .brand-icon{
