@@ -65,7 +65,7 @@ a:hover{ text-decoration:underline; }
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:10px;
   min-width:0;
 }
 
@@ -84,7 +84,7 @@ a:hover{ text-decoration:underline; }
 }
 
 .paper-logo{
-  height: 95px;
+  height: 98px;
   width: auto;
   display:block;
   opacity: 0.95
