@@ -82,6 +82,10 @@ a:hover{ text-decoration:underline; }
   opacity: 0.95;
 }
 
+.brand-icon{
+  flex-shrink: 0;
+}
+
 .brand-text{
   display:flex;
   flex-direction:column;
